@@ -18,10 +18,22 @@
 </div>
 	<div class="myNewStyle">
 		<div class ="input">
-<input type="text" name="food" value="Steak">
-<input type="submit" value="Submit"><br>
-<p>  </p>
+	        <p style = font-size:100% color="blue">What are you craving?</p>
+<input type="text" name="food">
+<button class="button" onclick="myFunct()">Submit</button>
+<p id="demo"> </p>
        </div>
+   <script>
+    function myFunct()
+    {
+    	var user_loc=prompt("Please enter your location");
+    	 var rest_loc=user_loc.link("http://www.google.com");
+    	if(user_loc!=null)
+    	{
+    		document.getElementById("demo").innerHTML=rest_loc;
+      	}
+    }
+   </script>
   <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -38,7 +50,7 @@
         <img src="Mexican.jpg" alt="Mexican" width="660" height="245">
         <div class="carousel-caption">
         	<div class="textFormatting">
-          <h><b>Mexican</b></h3>
+          <h><b>MEXICAN</b></h>
             </div>
         </div>
       </div>
@@ -47,7 +59,7 @@
         <img src="Italian.jpg" alt="Italian" width="660" height="245">
         <div class="carousel-caption">
         	<div class="textFormatting">
-          <h3><b>Italian</b></h3>
+          <h><b>ITALIAN</b></h>
             </div>
           
         </div>
@@ -57,7 +69,7 @@
         <img src="Cajun.jpg" alt="Flower" width="660" height="45">
         <div class="carousel-caption">
           <div class="textFormatting">
-          <h3><b>Cajun</b></h3>
+          <h><b>CAJUN</b></h>
             </div>
         </div>
       </div>
@@ -66,7 +78,7 @@
         <img src="Indian.jpg" alt="Flower" width="660" height="45">
         <div class="carousel-caption">
           <div class="textFormatting">
-          <h3><b>Indian</b></h3>
+          <h><b>INDIAN</b></h>
             </div>
         </div>
       </div>
@@ -75,7 +87,7 @@
         <img src="Greek.jpg" alt="Greek" width="660" height="45">
         <div class="carousel-caption">
           <div class="textFormatting">
-          <h3><b>Greek</b></h3>
+          <h><b>GREEK</b></h>
             </div>
         </div>
       </div>
@@ -84,7 +96,7 @@
         <img src="Thai.jpg" alt="Flower" width="660" height="45">
         <div class="carousel-caption">
           <div class="textFormatting">
-          <h3><b>Thai</b></h3>
+          <h><b>THAI</b></h>
             </div>
         </div>
       </div>
@@ -93,7 +105,7 @@
         <img src="Chinese.jpg" alt="Flower" width="660" height="245">
         <div class="carousel-caption">
           <div class="textFormatting">
-          <h3><b>CHINESE</b></h3>
+          <h><b>CHINESE</b></h>
             </div>
         </div>
       </div>
@@ -101,8 +113,8 @@
       <div class="item">
         <img src="Pub.jpg" alt="Flower" width="660" height="245">
         <div class="carousel-caption">
-          <<div class="textFormatting">
-          <h3><b>PUB</b></h3>
+          <div class="textFormatting">
+          <h><b>PUB</b></h>
             </div>
         </div>
       </div>
