@@ -1,0 +1,92 @@
+.input
+{
+  font-family: Helvetica;
+  font-size: 80%;
+  text-align: left;
+  color: black;
+}
+.craves
+{
+font-family: lucida handwriting;
+font-size:300%;
+text-align: center;
+color: blue;
+}
+.myNewStyle
+{
+font-family: lucida handwriting;
+font-size:200%;
+text-align: left;
+color: blue;
+}
+.textFormatting
+{
+  text-align:right;
+  color:blue;
+  font-size:140%;
+}
+.carouselbox 
+      {
+       background-color:yellow;
+      font-size: 2%;
+      width: 800px;
+      height: 300px;
+      position: relative;
+      margin: 1em;
+      overflow: hidden;
+        }
+    .content
+    {
+      margin: 0;
+      padding: 0;
+    }
+    .content li {
+       color: blue;
+     font-family: Brush Script M7;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      text-align:center;
+      z-index: 2;
+    }
+.active
+    {
+      height: 500px;
+    }
+    .carouselbox button 
+    {
+      border: none;
+      visibility: hidden;
+    }
+    .active button 
+    {
+      visibility: visible;
+    } 
+    .offscreen
+     {
+      position: absolute;
+      left: -2000px;
+    }
+    .active .buttons
+     {
+      padding: 2px 0;
+      background: purple;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+     .active li 
+    {
+      position: absolute;
+      top: 30px;
+      pointer-events: none;
+      opacity: 0;
+       }
+        .active li.current 
+      {
+      top: 30px;
+      pointer-events: auto;
+      opacity: 1;
+          }
