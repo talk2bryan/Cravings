@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+		<script>
+		/* Where I got the skeleton of this code:
+		/*http://stackoverflow.com/questions/36104089/read-csv-file-from-a-location-and-display-as-html-table
+		/*http://stackoverflow.com/questions/28543821/convert-csv-lines-into-javascript-objects */
+		
+		$(document).ready(function(){
+			$("#chinese").click(function() {
+				$.ajax({
+					type: "GET",
+					url: "https://raw.githubusercontent.com/talk2bryan/Cravings/master/data.csv",
+					success: function (data) {
+						var bufferString = Papa.unparse(Papa.parse(data).data);
+						var arr = bufferString.split('\n'); 
+						
+						var restaurantObj = [];
+						var headers = arr[0].split(',');
+						for(var i = 1; i < arr.length; i++) {
+							var data = arr[i].split(',');
+							var obj = {};
+							for(var j = 0; j < data.length; j++) {
+								obj[headers[j].trim()] = data[j].trim();
+							}
+							restaurantObj.push(obj);
+						}
+						
+						$("#list").html("");
+						
+						for (var i = 0; i < restaurantObj.length; i++) {
+							if (restaurantObj[i].tag == "Chinese") {
+								$("#list").append(restaurantObj[i].name + " -- " + restaurantObj[i].price + '<br>');
+							}
+						}
+					}
+				});
+			});
+			
+			$("#burger").click(function() {
+				$.ajax({
+					type: "GET",
+					url: "https://raw.githubusercontent.com/talk2bryan/Cravings/master/data.csv",
+					success: function (data) {
+						var bufferString = Papa.unparse(Papa.parse(data).data);
+						var arr = bufferString.split('\n'); 
+						
+						var restaurantObj = [];
+						var headers = arr[0].split(',');
+						for(var i = 1; i < arr.length; i++) {
+							var data = arr[i].split(',');
+							var obj = {};
+							for(var j = 0; j < data.length; j++) {
+								obj[headers[j].trim()] = data[j].trim();
+							}
+							restaurantObj.push(obj);
+						}
+						
+						$("#list").html("");
+						
+						for (var i = 0; i < restaurantObj.length; i++) {
+							if (restaurantObj[i].tag == "Burger") {
+								$("#list").append(restaurantObj[i].name + " -- " + restaurantObj[i].price + '<br>');
+							}
+						}
+					}
+				});
+			});
+		});
+			
+		</script>
+    </head>
+    <body>
+		<button id="chinese">Chinese</button>
+		<button id="burger">Burger</button>
+		<p id="list"></p>
+	
+    </body>
+</html>
