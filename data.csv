@@ -1,4 +1,67 @@
-car name,miles/gallon,cylinders,displacement,horsepower,weight,acceleration,model year,origin
-"chevrolet chevelle malibu",18,8,307,130,3504,12,70,1
-"buick skylark 320",15,8,350,165,3693,11.5,70,1
-"plymouth satellite",18,8,318,150,3436,11,70,1
+name,picture,address,city,province,postal code,phone,website,price,rating,tag
+Daily Bread Cafe,"""/images/daily-bread.jpg""",92 Dysart Rd,Winnipeg,MB,R3T 2M7,1 204-474-8541,dailybreadcafe.ca,$,3,Cafe
+Hsieh Family Restaurant,"""/images/hseih.jpg""",230 Dalhousie Dr,Winnipeg,MB,R3T 2Z1,1 204-275-8215,,$$,2,Chinese
+Hai Shang Restaurant,"""/images/hai-shang.jpg""",2991 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-505-1887,,$$,3,Chinese
+Mo Mo Japanese Restaurant,"""/images/momo.jpg""",2855 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-275-6539,,$$,3,Japanese
+McDonald's,"""/images/mcdonalds-south.jpg""",3045 Pembina Highway,Winnipeg,MB,R3T 5H5,1 204-949-6083,mcdonalds.ca,$,3,Fast Food
+Bangali Sweets,"""/images/bangali.jpg""",2985 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-505-1786,surajb693.wix.com,$$,4,Bakery
+Park Avenue Family Restaurant,"""/images/park-avenue-restaurant.jpg""",2935 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-275-7711,fourpointswinnipegsouth.com,$$$,4,Cafe
+Southland Restaurant,"""/images/southland.jpg""",2855 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-261-3510,,$$,3,Chinese
+Smitty's,"""/images/smitty-s-pembina.jpg""",2835 Pembina Highway,Winnipeg,MB,R3T 4Z8,1 204-261-9614,smittys.ca,$$,3,Family Restaurant
+Desi Pizza & Sweets,"""/images/desi.jpg""",2835 Pembina Highway,Winnipeg,MB,R3T 4Z8,1 204-275-6600,desipizzasweetswinnipeg.com,$,4,Pizza
+Burger King,"""/images/bk.jpg""",2829 Pembina Highway,Winnipeg,MB,R3T 4Z8,1 204-987-8432,burgerking.ca,$,3,Fast Food
+Eat On Samosa,"""/images/eat-on-samosa.jpg""",2810 Pembina Highway,Winnipeg,MB,R3T 5P3,1 204-338-280,eatonsamosa.com,$,4,Indian
+Pizza Hotline,"""/images/pizza-hotline.jpg""",2795 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-222-2222,pizzahotline.ca,$,2,Pizza
+Sky World Restaurant,"""/images/skyworld.jpg""",2795 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-261-5733,,$$,3,Japanese
+Chatime Winnipeg,"""/images/chatime.jpg""",2800 Pembina Highway,Winnipeg,MB,R3T 5P3,1 204-615-1878,,$$$,2,Cafe
+Jupiter Artistic Cake,"""/images/cake.jpg""",2800 Pembina Highway,Winnipeg,MB,R3T 5P3,1 204-615-6747,,$$$,4,Bakery
+Subway,"""/images/subway-pembina.jpg""",2750 Pembina Highway,Winnipeg,MB,R3T 2H8,1 204-261-7488,subway.ca,$$,3,Sandwich
+Boston Pizza,"""/images/bostonPizza.jpg""",2729 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-261-7111,bostonpizza.com,$$$,3,Pizza
+Dim Sum Garden Restaurant,"""/images/dim-sum.jpg""",2677 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-269-7799,,$$,4,Chinese
+Pizza Pizza,"""/images/pizza.jpg""",2677 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-957-1111,pizzapizza.ca,$,3,Pizza
+Wild Wing,"""/images/wild-wing.jpg""",2589 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-691-9464,wildwingrestaurants.com,$$,3,Pub
+Santa Lucia Pizza,"""/images/santa-lucia.jpg""",2589 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-269-4611,santaluciapizza.com,$$$,4,Pizza
+Kazoku Restaurant,"""/images/kazoku.jpg""",2579 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-269-0042,,$$,4,Japanese
+Dairy Queen,"""/images/dq.jpg""",2525 Pembina Highway,Winnipeg,MB,R3T 2H5,1 204-269-4522,dairyqueen.com,$,3,Ice Cream
+Five Guys Burgers and Fries,"""/images/five-guys.jpg""",2425 Pembina Highway,Winnipeg,MB,R3T 2H4,1 204-261-5555,fiveguys.com,$$,4,Fast Food
+Sushi Jet,"""/images/sushi-jet.jpg""",2425 Pembina Highway,Winnipeg,MB,R3T 2H4,1 204-339-7888,sushijet.com,$$,3,Japanese
+Tim Hortons,"""/images/tim-h-pembina.jpg""",2405 Pembina Highway,Winnipeg,MB,R3T 2H4,1 204-269-3605,timhortons.com,$,2,Cafe
+Hong Du Kkae,"""/images/hong-du.jpg""",2241 Pembina Highway,Winnipeg,MB,R3T 2H4,1 204-219-0025,,$$,2,Korean
+Golden Loong Restaurant,"""/images/golden-loong.jpg""",2237 Pembina Highway,Winnipeg,MB,R3T 2H1,1 204-504-6766,,$$,4,Chinese
+Taco Bell,"""/images/taco-bell.jpg""",2079 Pembina Highway,Winnipeg,MB,R3T 5L1,1 204-987-8312,tacobell.ca,$,2,Mexican
+Subway,"""/images/subway.jpg""",2075 Pembina Highway,Winnipeg,MB,R3T 5L1,1 204-269-7778,subway.ca,$$,3,Sandwich
+Sun Fortune,"""/images/sun-fortune.jpg""",2077 Pembina Highway,Winnipeg,MB,R3T 5L1,1 204-269-6868,sunfortunerestaurant.com,$$,4,Chinese
+Nicolino's,"""/images/nicolinos.jpg""",2077 Pembina Highway,Winnipeg,MB,R3T 5J9,1 204-269-5004,nicolinorestaurant.com,$$$,3,Italian
+Kiwa Korean Cuisine,"""/images/kiwa-korean.jpg""",2077 Pembina Highway,Winnipeg,MB,R3P 5J9,1 204-261-3131,,$$,4,Korean
+Applebee's,"""/images/applebees.jpg""",2065 Pembina Highway,Winnipeg,MB,R3T 5J9,1 204-275-2272,applebeescanada.com,$$$,2,Family Restaurant
+McDonald's,"""/images/mcdonalds.jpg""",2027 Pembina Highway,Winnipeg,MB,R3T 5W7,1 204-949-6019,mcdonalds.ca,$,3,Fast Food
+Barley Brothers,"""/images/barley.jpg""",2005 Pembina Highway,Winnipeg,MB,R3T 5W7,1 204-691-3300,barleybrothers.ca,$$$,4,Pub
+A&W,"""/images/a-w.jpg""",2012 Pembina Highway,Winnipeg,MB,R3T 2G8,1 204-275-3456,awguarantee.ca,$$,3,Fast Food
+North Garden Restaurant,"""/images/north-garden.jpg""",33 University Crescent,Winnipeg,MB,R3T 2N5,1 204-275-2591,northgardenrestaurant.ca,$$,3,Chinese
+Pizza Hut,"""/images/pizza-hut.jpg""",1910 Pembina Highway,Winnipeg,MB,R3T 4S5,1 204-953-4133,pizzahut.ca,$$,3,Pizza
+Aaltos Garden Cafe,"""/images/aalto-s-garden-cafe.jpg""",1824 Pembina Highway,Winnipeg,MB,R3T 2H2,1 204-478-6422,canadinns.com,$$,3,Cafe
+Huang Pu River Restaurant,"""/images/huang-pu.jpg""",1875 Pembina Highway,Winnipeg,MB,R3T 2G6,1 204-261-4407,,$,4,Chinese
+Summer Palace Chinese Restaurant,"""/images/summer-palace-chinese.jpg""",1755 Pembina Highway,Winnipeg,MB,R3T 2G6,1 204-261-9241,summerpalacewpg.com,$,3,Chinese
+Pony Corral,"""/images/pony-corral.jpg""",1700 Pembina Highway,Winnipeg,MB,R3T 2G2,1 204-275-3687,ponycorral.ca,$$$,3,Pub
+Tim Hortons,"""/images/tim-h-stm.jpg""",2147 St Mary's Rd,Winnipeg,MB,R2N 3X7,1 204-254-7047,timhortons.ca,$,3,Cafe
+Gondola Pizza,"""/images/gondola.jpg""",12 Britannica Rd,Winnipeg,MB,R2N 1J4,1 204-255-6440,gondola-pizza.com,$$,4,Pizza
+Licks Ice Cream Patio,"""/images/licks.jpg""",20 Britannica Rd,Winnipeg,MB,R2N 1J4,1 204-254-7262,,$$$,5,Ice Cream
+Robin's Donuts,"""/images/Robins.jpg""",1639 St Mary's Rd,Winnipeg,MB,R2N 3W1,1 204-255-6713,robinsdonuts.com,$,3,Cafe
+Cafe Lemontree,"""/images/cafe-lemon-tree.jpg""",1631 St Mary's Rd,Winnipeg,MB,R2N 1Z4,1 204-691-2454,cafelemontree.com,$,5,Korean
+Santa Ana Pizzieria & Bistro,"""/images/santa-ana.jpg""",1631 St Mary's Rd,Winnipeg,MB,R2N 1Z4,1 204-415-1440,santaanabistro.ca,$$,4,Pizza
+Miriwa Restaurant,"""/images/miriwa.jpg""",1572 St Mary's Rd,Winnipeg,MB,R2M 3W4,1 204-257-1650,miriwa.com,$$,3,Chinese
+Smitty's,"""/images/smittys-03.jpg""",150 Meadowood Dr,Winnipeg,MB,R2M 5L7,1 204-256-1242,smittys.ca,$$,4,Family Restaurant
+Burrito Splendido,"""/images/burrito-splendido.jpg""",1504 St Mary's Rd,Winnipeg,MB,R2M 3V7,1 204-257-6127,burritosplendidostmaryswinnipeg.com,$$,4,Mexican
+Domino's Pizza,"""/images/domino-s-pizza.jpg""",166 Meadowood Dr,Winnipeg,MB,R2M 5G8,1 204-987-5559,pizza.dominos.ca,$$,3,Pizza
+Montana's,"""/images/montanas.jpg""",1221 St Mary's Rd,Winnipeg,MB,R2M 5L5,1 204-254-2128,montanas.ca,$$$,4,BBQ
+Earls Kitchen & Bar,"""/images/earls.jpg""",1215 St Mary's Rd,Winnipeg,MB,R2M 5L5,1 204-254-1600,earls.ca,$$$,3,Steak
+Original Joe's Restaurant & Bar,"""/images/original-joe-s.jpg""",1220 St Mary's Rd,Winnipeg,MB,R2M 2V6,1 204-414-2966,originaljoes.ca,$$$$,4,Steak
+Wendy's,"""/images/wendys.jpg""",1230 St Mary's Rd,Winnipeg,MB,R2M 3V6,1 204-253-3837,wendys.com,$$,4,Fast Food
+Za Pizza Bistro,"""/images/za-pizza-bistro.jpg""",1220 St Mary's Rd,Winnipeg,MB,R2M 3V6,1 204-615-0808,zapizzabistro.com,$$,5,Pizza
+Kawaii Crepe,"""/images/kawaii.jpg""",1220 St Mary's Rd,Winnipeg,MB,R2M 5S3,1 204-691-3700,kawaiicrepe.ca,$$,4,Bakery
+Palatal Express,"""/images/palatal-express.jpg""",1220 St Mary's Rd,Winnipeg,MB,R2M 3V6,1 204-691-0880,palatalexpress.com,$,4,Chinese
+Starbucks,"""/images/starbucks.jpg""",1225 St Mary's Rd,Winnipeg,MB,R2M 5E5,1 204-254-2620,starbucks.ca,$$,3,Cafe
+George's Burgers & Subs,"""/images/georges.jpg""",1141 St Mary's Rd,Winnipeg,MB,R2M 3T9,1 204-257-3856,,$$,4,Fast Food
+Maxime's Restaurant,"""/images/maximes.jpg""",1131 St Mary's Rd,Winnipeg,MB,R2M 5C1,1 204-257-1521,maximerestaurant.ca,$$$$,3,Steak
+Victoria Seafood Restaurant,"""/images/vic-seafood.jpg""",1086 St Mary's Rd,Winnipeg,MB,R2M 4K4,1 204-255-0665,,$$,4,Chinese
+Copper Chimney,"""/images/copper-chimney.jpg""",1070 St Mary's Rd,Winnipeg,MB,R2M 3T3,1 204-691-5777,copperchimneywpg.com,$$$,4,Indian
