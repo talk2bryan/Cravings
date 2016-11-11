@@ -6,24 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="styles.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
 </head>
 <body style="background-color:red;">
 	
-	<div class="craves">
+<div class="craves">
 	<!--<div class="container">-->
-  <h2 style="font-size:250%"><b>CRAVINGS<b></h2>
-  <br>
+  <h2 style="font-size:250%"><b>CRAVINGS<b></h2><br>
 </div>
-	<div class="myNewStyle">
-		<div class ="input">
-	        <p style = font-size:100% color="blue">What are you craving?</p>
+
+<div class="myNewStyle">
+	<div class ="input">
+    <p style="font-size:100%" color="blue">What are you craving?</p>
 <input type="text" name="food">
 <button class="button" onclick="myFunct()">Submit</button>
 <p id="demo"> </p>
-       </div>
-   <script>
+    </div>
+    <script>
     function myFunct()
     {
     	var user_loc=prompt("Please enter your location");
@@ -33,7 +35,8 @@
     		document.getElementById("demo").innerHTML=rest_loc;
       	}
     }
-   </script>
+    </script>
+   
   <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -79,7 +82,7 @@
       </div>
 
       <div class="item">
-        <img src="Indian.jpg" alt="Indian" width="660" height="45">
+        <img src="Indian.jpg" alt="Indian" width="660" height="245">
         <div class="carousel-caption">
           <div class="textFormatting">
           <h><b>INDIAN</b></h>
@@ -88,7 +91,7 @@
       </div>
 
       <div class="item">
-        <img src="Greek.jpg" alt="Greek" width="660" height="45">
+        <img src="Greek.jpg" alt="Greek" width="660" height="245">
         <div class="carousel-caption">
           <div class="textFormatting">
           <h><b>GREEK</b></h>
@@ -106,7 +109,7 @@
       </div>
 
       <div class="item">
-        <img src="Chinese.jpg" alt="Chinese" width="660" height="245">
+        <img src="Chinese.jpg" alt="Chinese" width="660" height="45">
         <div class="carousel-caption">
           <div class="textFormatting">
           <h><b>CHINESE</b></h>
@@ -167,6 +170,7 @@ $(document).ready(function(){
     $(".item8").click(function(){
         $("#myCarousel").carousel(7);
     });
+    
     // Enable Carousel Controls
     $(".left").click(function(){
         $("#myCarousel").carousel("prev");
