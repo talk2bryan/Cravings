@@ -8,7 +8,7 @@
 		/*http://stackoverflow.com/questions/36104089/read-csv-file-from-a-location-and-display-as-html-table
 		/*http://stackoverflow.com/questions/28543821/convert-csv-lines-into-javascript-objects */
 		
-		$(document).ready(function(){
+		$(document).ready(function(){		
 			$("#chinese").click(function() {
 				$.ajax({
 					type: "GET",
@@ -66,6 +66,40 @@
 							}
 						}
 					}
+				});	
+			});
+			
+			$("#draw").click(function() {
+				$.ajax({
+					type: "GET",
+					url: "https://raw.githubusercontent.com/talk2bryan/Cravings/master/data.csv",
+					success: function (data) {
+						var bufferString = Papa.unparse(Papa.parse(data).data);
+						var arr = bufferString.split('\n'); 
+						
+						var restaurantObj = [];
+						var headers = arr[0].split(',');
+						for(var i = 1; i < arr.length; i++) {
+							var data = arr[i].split(',');
+							var obj = {};
+							for(var j = 0; j < data.length; j++) {
+								obj[headers[j].trim()] = data[j].trim();
+							}
+							restaurantObj.push(obj);
+						}
+						
+						$("#pic").attr('src', restaurantObj[0].picture);
+						$("#name").text("Name: " + restaurantObj[0].name);
+						$("#address").text("Address: " + restaurantObj[0].address + " " + restaurantObj[0].city + ", " + restaurantObj[0].province + " " + restaurantObj[0].postalCode);
+						$("#phone").text("Phone: " + restaurantObj[0].phone);
+						$("#site").text("Website: " + restaurantObj[0].website);
+						$("#price").text("Price: " + restaurantObj[0].price);
+						$("#rating").text("Average Rating: ");
+						for (var i = 0; i < parseInt(restaurantObj[0].rating); i++) {
+							 $("#rating").append("*");
+						}
+						$("#tag").text("Style: " + restaurantObj[0].tag);
+					}
 				});
 			});
 		});
@@ -75,7 +109,18 @@
     <body>
 		<button id="chinese">Chinese</button>
 		<button id="burger">Burger</button>
+		<button id="draw">Draw Header</button>
 		<p id="list"></p>
 	
+		<div>
+		<img id=pic style="float:left;width:304px;height:228px;">
+		<p id="name"></p>
+		<p id="address"></p>
+		<p id="phone"></p>
+		<p id="site"></p>
+		<p id="price"></p>
+		<p id="rating"></p>
+		<p id="tag"></p>
+		</div>
     </body>
 </html>
