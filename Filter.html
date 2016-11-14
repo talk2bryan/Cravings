@@ -9,6 +9,7 @@
 		/*http://stackoverflow.com/questions/28543821/convert-csv-lines-into-javascript-objects */
 		
 		$(document).ready(function(){		
+			var counter = 0;
 			$("#chinese").click(function() {
 				$.ajax({
 					type: "GET",
@@ -88,22 +89,34 @@
 							restaurantObj.push(obj);
 						}
 						
-						$("#pic").attr('src', restaurantObj[0].picture);
-						$("#name").text("Name: " + restaurantObj[0].name);
-						$("#address").text("Address: " + restaurantObj[0].address + " " + restaurantObj[0].city + ", " + restaurantObj[0].province + " " + restaurantObj[0].postalCode);
-						$("#phone").text("Phone: " + restaurantObj[0].phone);
-						$("#site").text("Website: " + restaurantObj[0].website);
-						$("#price").text("Price: " + restaurantObj[0].price);
+						$("#no").text("Number: " + (counter+1) + "/" + (restaurantObj.length-1));
+						$("#pic").attr('src', restaurantObj[counter].picture);
+						$("#name").text("Name: " + restaurantObj[counter].name);
+						$("#address").text("Address: " + restaurantObj[counter].address + " " + restaurantObj[counter].city + ", " + restaurantObj[counter].province + " " + restaurantObj[counter].postalCode);
+						$("#phone").text("Phone: " + restaurantObj[counter].phone);
+						//$("#site").text("Website: " + restaurantObj[counter].website);
+						$("#site").text("Website: ");
+						$('<a>',{
+							text: restaurantObj[counter].website,
+							title: 'Website',
+							href: 'http://' + restaurantObj[counter].website,
+						}).appendTo('#site');
+						$("#price").text("Price: " + restaurantObj[counter].price);
 						$("#rating").text("Average Rating: ");
-						for (var i = 0; i < parseInt(restaurantObj[0].rating); i++) {
+						for (var i = 0; i < parseInt(restaurantObj[counter].rating); i++) {
 							 $("#rating").append("*");
 						}
-						$("#tag").text("Style: " + restaurantObj[0].tag);
+						$("#tag").text("Style: " + restaurantObj[counter].tag);
+						
+						if (counter < restaurantObj.length-2) {
+							counter++;
+						} else {
+							counter = 0;
+						}
 					}
 				});
 			});
 		});
-			
 		</script>
     </head>
     <body>
@@ -114,6 +127,7 @@
 	
 		<div>
 		<img id=pic style="float:left;width:304px;height:228px;">
+		<p id="no"></p>
 		<p id="name"></p>
 		<p id="address"></p>
 		<p id="phone"></p>
