@@ -8,3 +8,18 @@ div.one_liner{
     text-align: center;
     border: 3px solid #73AD21;
 }
+
+div.margin-top-navbar-height{
+    margin-top: 80px;
+}
+
+.params{
+    border: solid 1px #d9d9d9;
+    position: relative;
+    top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.filter-choice-sm{
+    font-size: 12px;
+}
