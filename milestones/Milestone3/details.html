@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <style>
-	body {font-family: "Lato", sans-serif;}
+	body {
+		font-family: "Lato",
+		sans-serif;
+	}
 
 	ul.tab {
 		list-style-type: none;
-		margin: 0;
+		margin-left:20%;
+		margin-right:20%;
 		padding: 0;
 		overflow: hidden;
 		border: 1px solid #ccc;
@@ -13,7 +17,9 @@
 	}
 
 	/* Float the list items side by side */
-	ul.tab li {float: left;}
+	ul.tab li {
+		float: left;
+	}
 
 	/* Style the links inside the list items */
 	ul.tab li a {
@@ -40,29 +46,64 @@
 	.tabcontent {
 		display: none;
 		padding: 6px 12px;
-		border: 1px solid #ccc;
-		border-top: none;
+		border-style: none;
+		margin-left:20%;
+		margin-right:20%;
 	}
 	
-	.logo {
+	#header {
+		background-color:FireBrick;
+	}
+	
+	#logo {
+		padding: 5px;
+		height:100px;
+	}
+	
+	#info {
+		margin-left: 10%;
+		background-color: #f1f1f1;
+	}
+	
+	#rest-pic {
+		height: 200px;
+		width: 200px;
+		float: left;
+		border-style: none;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	
+	#name {
 		
 	}
 	
-	.header {
-		color: FireBrick;
-	}
 </style>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+</head>
 <body>
-
 	<div id="header">
-		<img id="logo" src="https://github.com/talk2bryan/Cravings/tree/master/milestones/Milestone3/resources/images/logo.png" style="height:10%;">
+		<img id="logo">
 	</div>
 	
-
+	<div id="info">
+		<img id="rest-pic" alt="restaurant front">
+		<h id="name"></h>
+		<p id="address"></p>
+		<p id="phone"></p>
+		<p id="site"></p>
+		<p id="price"></p>
+		<img id="rating">
+		<p id="tag"></p>
+	</div>
+	
 	<ul class="tab">
-	  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Menu')" id="defaultOpen">Menu</a></li>
-	  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Reviews')">Reviews</a></li>
-	  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Map')">Map</a></li>
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Menu')" id="defaultOpen">Menu</a></li>
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Reviews')">Reviews</a></li>
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Map')">Map</a></li>
 	</ul>
 
 	<div id="Menu" class="tabcontent">
@@ -81,22 +122,64 @@
 	</div>
 
 	<script>
-	function openCity(evt, cityName) {
-		var i, tabcontent, tablinks;
-		tabcontent = document.getElementsByClassName("tabcontent");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
+		$(document).ready(function(){		
+			// load logo
+			$("#logo").attr("src", "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources/images/logo.png");
+			
+			// load restaurant
+			$.ajax({
+				type: "GET",
+				url: "https://raw.githubusercontent.com/talk2bryan/Cravings/master/data.csv",
+				success: function (data) {
+					var bufferString = Papa.unparse(Papa.parse(data).data);
+					var arr = bufferString.split('\n'); 
+					
+					var restList = [];
+					var headers = arr[0].split(',');
+					for(var i = 1; i < arr.length; i++) {
+						var data = arr[i].split(',');
+						var obj = {};
+						for(var j = 0; j < data.length; j++) {
+							obj[headers[j].trim()] = data[j].trim();
+						}
+						restList.push(obj);
+					}
+					
+					var id = 0;
+					
+					$("#rest-pic").attr('src', restList[id].picture);
+					$("#name").text(restList[id].name);
+					$("#address").text(restList[id].address + " " + restList[id].city + ", " + restList[id].province + " " + restList[id].postalCode);
+					$("#phone").text(restList[id].phone);
+					$("#site").text();
+					$('<a id="link">',{
+						text: restList[id].website,
+						title: 'Website',
+						href: 'http://' + restList[id].website,
+					}).appendTo('#site');
+					$("#price").text("Avg Price: " + restList[id].price);
+					$("#rating").attr("src", restList[id].rating);
+					$("#tag").text("Style: " + restList[id].tag);
+				}
+			});
+		});
+	
+		function openTab(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
 		}
-		tablinks = document.getElementsByClassName("tablinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-		}
-		document.getElementById(cityName).style.display = "block";
-		evt.currentTarget.className += " active";
-	}
 
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
 	</script>
      
 </body>
