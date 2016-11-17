@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <style>
+	html, body {
+		height: 100%;
+		overflow: hidden;
+	}
+
 	body {
 		font-family: "Lato",
 		sans-serif;
+		margin: 0px;
+		padding: 0px;
+		background-color: #f1f1f1;
 	}
 
 	ul.tab {
@@ -12,7 +20,6 @@
 		margin-right:20%;
 		padding: 0;
 		overflow: hidden;
-		border: 1px solid #ccc;
 		background-color: #f1f1f1;
 	}
 
@@ -61,24 +68,36 @@
 	}
 	
 	#info {
-		margin-left: 10%;
 		background-color: #f1f1f1;
+		padding-bottom: 10px;
 	}
 	
 	#rest-pic {
 		height: 200px;
-		width: 200px;
+		width: 250px;
 		float: left;
 		border-style: none;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
+
+		padding-right: 15px;
+		margin-left: 10%;
 	}
 	
 	#name {
 		
 	}
 	
+	#rating { 
+		height: 25px;
+		//float: right;
+	}
+	
+	#lower-third {
+		height: 100%;
+		background-color: white;
+	}
 </style>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -91,45 +110,51 @@
 	
 	<div id="info">
 		<img id="rest-pic" alt="restaurant front">
-		<h id="name"></h>
+		<h1 id="name"></h1>
 		<p id="address"></p>
 		<p id="phone"></p>
 		<p id="site"></p>
-		<p id="price"></p>
+		<p id="tag-price"></p>
 		<img id="rating">
-		<p id="tag"></p>
 	</div>
-	
+
+
 	<ul class="tab">
 	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Menu')" id="defaultOpen">Menu</a></li>
 	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Reviews')">Reviews</a></li>
 	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Map')">Map</a></li>
 	</ul>
 
-	<div id="Menu" class="tabcontent">
-	  <h3>Menu</h3>
-	  <p>Menu is the capital city of England.</p>
-	</div>
+	<div id="lower-third">
+		<div id="Menu" class="tabcontent">
+		  <h3>Menu</h3>
+		  <p>This is where the menu goes.</p>
+		</div>
 
-	<div id="Reviews" class="tabcontent">
-	  <h3>Reviews</h3>
-	  <p>Reviews is the capital of France.</p>
-	</div>
+		<div id="Reviews" class="tabcontent">
+		  <h3>Reviews</h3>
+		  <p>This is where reviews go.</p>
+		</div>
 
-	<div id="Map" class="tabcontent">
-	  <h3>Map</h3>
-	  <p>Map is the capital of Japan.</p>
-	</div>
+		<div id="Map" class="tabcontent">
+		  <h3>Map</h3>
+		  <p>This is where a map goes.</p>
+		</div>
+
+	</div>	
 
 	<script>
-		$(document).ready(function(){		
+		$(document).ready(function(){
+			var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
+			
 			// load logo
+			//$("#logo").attr("src", source + "/images/logo.png");
 			$("#logo").attr("src", "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources/images/logo.png");
 			
 			// load restaurant
 			$.ajax({
 				type: "GET",
-				url: "https://raw.githubusercontent.com/talk2bryan/Cravings/master/data.csv",
+				url: source + "/data.csv",
 				success: function (data) {
 					var bufferString = Papa.unparse(Papa.parse(data).data);
 					var arr = bufferString.split('\n'); 
@@ -157,13 +182,13 @@
 						title: 'Website',
 						href: 'http://' + restList[id].website,
 					}).appendTo('#site');
-					$("#price").text("Avg Price: " + restList[id].price);
-					$("#rating").attr("src", restList[id].rating);
-					$("#tag").text("Style: " + restList[id].tag);
+					$("#tag-price").text(restList[id].tag + " - " + restList[id].price);
+					//$("#rating").attr("src", source + "/images/" + restList[id].rating + ".png");
+					$("#rating").attr("src", "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources/images/" + restList[id].rating + ".png");
 				}
 			});
 		});
-	
+
 		function openTab(evt, cityName) {
 			var i, tabcontent, tablinks;
 			tabcontent = document.getElementsByClassName("tabcontent");
