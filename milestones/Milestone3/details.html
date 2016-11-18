@@ -7,7 +7,7 @@
 	}
 
 	body {
-		font-family: "Lato",
+		font-family: "Arial",
 		sans-serif;
 		margin: 0px;
 		padding: 0px;
@@ -25,6 +25,7 @@
 		padding: 0;
 		overflow: hidden;
 		background-color: #f1f1f1;
+		margin-bottom: 0px;
 	}
 
 	/* Float the list items side by side */
@@ -50,7 +51,7 @@
 
 	/* Create an active/current tablink class */
 	ul.tab li a:focus, .active {
-		background-color: #ccc;
+		background-color: white;
 	}
 
 	/* Style the tab content */
@@ -156,10 +157,7 @@
 		$(document).ready(function(){
 			var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
 
-			//$("#logo").attr("src", source + "/images/logo.png");
-			$("#logo").attr("src", "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources/images/logo.png");
-			
-			
+			$("#logo").attr("src", "./resources/images/logo.png");			
 			
 			// load restaurant
 			$.ajax({
@@ -180,7 +178,7 @@
 						restList.push(obj);
 					}
 			
-					var id = 0;
+					var id = 43;
 			
 					// @TODO: load breadcrumb
 					$('<a>',{
@@ -209,8 +207,7 @@
 					}).appendTo('#site-phone');
 						
 					$("#tag-price").text(restList[id].tag + " - " + restList[id].price);
-					//$("#rating").attr("src", source + "/images/" + restList[id].rating + ".png");
-					$("#rating").attr("src", "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources/images/" + restList[id].rating + ".png");
+					$("#rating").attr("src", "./resources/images/" + restList[id].rating + ".png");
 				}
 			});
 		});
