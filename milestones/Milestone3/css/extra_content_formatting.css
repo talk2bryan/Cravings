@@ -9,10 +9,67 @@ div.one_liner{
     border: 3px solid #73AD21;
 }
 
-div.margin-top-navbar-height{
-    margin-top: 80px;
+.margin-top-navbar-height{
+    background-image: url("../resources/images/logo.png");
 }
 
+@media (min-width: 768px) {
+    .margin-top-navbar-height{
+        background-image: url("../resources/images/logo.png");
+    }
+}
+.row{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.border-bottom-light{
+    width: 100%;
+}
+.dropdown{
+    position: relative;
+}
+
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+}
+
+.restaurant-search{
+    position: fixed;
+    z-index: 997;
+    background-color: #FFF;
+    box-shadow: 0 3px 20px -10px rgba(0,0,0,0.5);
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.restaurant-search input{
+    padding-left: 26px;
+    padding-right: 68px;
+    color: #999;
+    border: 0;
+}
+.restaurant-search-replacement{
+    height: 30px;
+}
+.input-group-overlay{
+    position: relative;
+    overflow: hidden;
+}
+
+.margin-bottom-none{
+    margin-bottom: 0px;
+}
+.restaurant-search .container-fluid{
+    margin-left: 22px;
+}
 .params{
     border: solid 1px #d9d9d9;
     position: relative;
@@ -22,4 +79,31 @@ div.margin-top-navbar-height{
 }
 .filter-choice-sm{
     font-size: 12px;
+}
+.navbar, .navbar-inverse{
+    background-image: url("../resources/images/logo.png");
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.navbar-fixed-top{
+    top: 0;
+    border-width: 0 0 1px;
+}
+.navbar{
+    border: 0px;
+    margin-bottom: 0px;
+    z-index: 1000;
+}
+header{
+    position: relative;
+    z-index: 1000;
+}
+
+header, nav{
+    display: block;
 }
