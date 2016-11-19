@@ -92,13 +92,48 @@ ul.tab li a:focus, .active {
 	height: 20px;
 }
 
-#Reviews, #Menu {
+#lower-third {
+	position: relative;
+	z-index: 1;
+	overflow: auto;
+}
+
+#Menu {
 	margin-left: 15%;
 	margin-right: 15%;
+	padding-bottom: 25%;
+}
+
+.sub-menu {
+	margin-top: 40px;
+}
+
+.sub-heading {
+	margin-bottom: 0px;
+}
+.sub-desc {
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+.menu-item-heading {
+	margin-bottom: 5px;
+}
+
+.menu-item-desc {
+	margin-top: 0px;
+	margin-left: 2%;
+}
+
+#Reviews {
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-bottom: 50px;
 }
 
 #review-list {
 	margin-left: 15px;
+	margin-bottom: 20px;
 }
 
 h4.review-name {
