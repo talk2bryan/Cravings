@@ -1,109 +1,133 @@
 /*This will contain all out content formatting that bootstrap does not provide*/
-div.one_liner{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    width: 400px;
-    height: 100px;
-    text-align: center;
-    border: 3px solid #73AD21;
-}
 
-.margin-top-navbar-height{
-    background-image: url("../resources/images/logo.png");
-}
-
-@media (min-width: 768px) {
-    .margin-top-navbar-height{
-        background-image: url("../resources/images/logo.png");
+@media (min-width: 992px){
+    .col-md-8 {
+        width: 66.66667%;
     }
 }
-.row{
+
+@media (min-width: 992px){
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+}
+
+.padding-top-xl {
+    padding-top: 20px;
+}
+.row {
     margin-left: -15px;
     margin-right: -15px;
 }
+.list-info{
+position: relative;
+    text-align: center;
+}
 
-.border-bottom-light{
+.margin-logo-header-height{
+    margin: 0;
+    /*margin-top: 80px;*/
+}
+
+.logo-header{
+    background-color: FireBrick;
+    height: 100px;
+}
+
+@media (min-width: 992px), (min-width: 1200px){
+    #restaurant-list-container {
+        min-height: 640px;
+        margin-top: 0px;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+@media (min-width: 768px){
+    #restaurant-list-container {
+        min-height: 612px;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+
+@media (min-width: 992px){
+    .col-md-8 {
+        width: 66.66667%;
+    }
+}
+
+@media (min-width: 992px){
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+}
+
+
+.col-xs-12 {
     width: 100%;
 }
-.dropdown{
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
     position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-div{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: block;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    -webkit-font-smoothing: antialiased;
+#restaurant-list-container {
+    min-height: 740px;
+    margin-top: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
-.restaurant-search{
-    position: fixed;
-    z-index: 997;
+.restaurant-list {
     background-color: #FFF;
-    box-shadow: 0 3px 20px -10px rgba(0,0,0,0.5);
-}
-.form-group{
-    margin-bottom: 15px;
-}
-.restaurant-search input{
-    padding-left: 26px;
-    padding-right: 68px;
-    color: #999;
-    border: 0;
-}
-.restaurant-search-replacement{
-    height: 30px;
-}
-.input-group-overlay{
-    position: relative;
-    overflow: hidden;
-}
-
-.margin-bottom-none{
-    margin-bottom: 0px;
-}
-.restaurant-search .container-fluid{
-    margin-left: 22px;
-}
-.params{
-    border: solid 1px #d9d9d9;
-    position: relative;
-    top: 0;
+    outline: solid 1px #c2c2c2;
+    border-left: 2px solid transparent;
+    padding: 12px 12px 12px 126px;
     margin-left: 0;
     margin-right: 0;
-}
-.filter-choice-sm{
-    font-size: 12px;
-}
-.navbar, .navbar-inverse{
-    background-image: url("../resources/images/logo.png");
+    position: relative;
+    min-height: 120px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-.navbar-fixed-top, .navbar-fixed-bottom{
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
-.navbar-fixed-top{
-    top: 0;
-    border-width: 0 0 1px;
-}
-.navbar{
-    border: 0px;
-    margin-bottom: 0px;
-    z-index: 1000;
+html{
+    font-size: 10px;
+    font-family: sans-serif;
 }
 header{
+    height:10%;
     position: relative;
     z-index: 1000;
 }
+body {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #363636;
+    background-color: #F2F2F2;
+}
+body {
+    margin: 0;
+}
 
-header, nav{
+body {
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+header{
     display: block;
+}
+input{
+    font: inherit;
+    color: inherit;
+    margin: 0;
 }

@@ -1,48 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Restaurants | Dishes</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=deice-width, initial-scale=1.0">
+        <title> Restaurants | Dishes</title>
 
-    <link rel="stylesheet" href="css/extra_content_formatting.css" >
-</head>
-<body>
+        <link rel="stylesheet" href="css/extra_content_formatting.css" >
 
-<header class>
-    <nav class="navbar navbar-fixed-top navbar-inverse"></nav>
-</header>
+    </head>
 
-<div class="margin-top-navbar-height" ></div>
-
-
-
-
-<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs" id="restaurant-search-container">
-    <div class="restaurant-search full-width dropdown border-bottom-light">
-        <div class="container-fluid">
-            <div class="form-group margin-bottom-none">
-                <div class="input-group-overlay">
-                    <input id="restaurant-search" class="form-control restaurant-search-input" type="text"
-                           placeholder="Search for Restaurant" autocomplete="off">
-                </div>
-            </div>
-        </div>
-        <div class="restaurant-search-replacement"></div>
-    </div>
-</div>
-
-<div id="main_content">
+    <body>
     <div class="container">
-        <div class="row hidden-xs hidden-sm">
-            <div class="col-xs-9"></div>
+        <header class="logo-header">
+            <img src="resources/images/logo.png" class="logo-header">
+        </header>
+
+        <div class="margin-logo-header-height"></div>
+
+
+    <div class="col-xs-12 col-md-8">
+        <div class="list-info">
+            <h2>200 restaurants offering Mexican dishes</h2>
+        </div>
+
+        <div id="restaurant-list-container">
+            <table>
+                <tr>Here we go</tr>
+            </table>
+            <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+
+
         </div>
     </div>
 
 
-</div>
 
+
+
+
+
+        <footer>
+
+        </footer>
+
+    </div>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/papaparse.js"></script>
-</body>
+    <!--<script src="js/behaviour.js"></script>-->
+    <script>
+        $(document).ready(function() {
+
+            // load row
+            $.ajax({
+                type: "GET",
+                url: "./resources/data.csv",
+                success: function (data) {
+
+                    var bufferString = Papa.unparse(Papa.parse(data).data);
+                    var arr = bufferString.split('\n');
+
+                    var iDiv = document.createElement('div');
+                    iDiv.id = 'body';
+                    iDiv.className = 'block';
+
+                    for (var i = 1; i < arr.length; i++) {
+                        var innerDiv = document.createElement('div');//one restaurant row
+                        innerDiv.className = 'restaurant-list';
+
+                        var row = arr[i].split(',');
+                        innerDiv.append(row[0]);
+//                        innerDiv.append($("<h4 />", row[0]));
+                        iDiv.appendChild(innerDiv);
+                    }
+                    document.getElementById('restaurant-list-container').appendChild(iDiv);
+                }
+            });
+        });
+    </script>
+    </body>
 </html>
