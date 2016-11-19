@@ -1,114 +1,7 @@
 <!DOCTYPE html>
 <html>
-<style>
-	html, body {
-		height: 100%;
-		overflow: hidden;
-	}
-
-	body {
-		font-family: "Arial",
-		sans-serif;
-		margin: 0px;
-		padding: 0px;
-		background-color: #f1f1f1;
-	}
-	
-	a:link {
-		text-decoration:none;
-	}
-
-	ul.tab {
-		list-style-type: none;
-		margin-left:20%;
-		margin-right:20%;
-		padding: 0;
-		overflow: hidden;
-		background-color: #f1f1f1;
-		margin-bottom: 0px;
-	}
-
-	/* Float the list items side by side */
-	ul.tab li {
-		float: left;
-	}
-
-	/* Style the links inside the list items */
-	ul.tab li a {
-		display: inline-block;
-		color: black;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-		transition: 0.3s;
-		font-size: 17px;
-	}
-
-	/* Change background color of links on hover */
-	ul.tab li a:hover {
-		background-color: #ddd;
-	}
-
-	/* Create an active/current tablink class */
-	ul.tab li a:focus, .active {
-		background-color: white;
-	}
-
-	/* Style the tab content */
-	.tabcontent {
-		display: none;
-		padding: 6px 12px;
-		border-style: none;
-		margin-left:20%;
-		margin-right:20%;
-	}
-	
-	#header {
-		background-color:FireBrick;
-	}
-	
-	#logo {
-		padding: 5px;
-		height:100px;
-	}
-	
-	#breadcrumb {
-		margin-left: 5%;
-	}
-	
-	#info {
-		background-color: #f1f1f1;
-		padding-bottom: 10px;
-	}
-	
-	#rest-pic {
-		height: 200px;
-		width: 250px;
-		float: left;
-		border-style: none;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-
-		padding-right: 15px;
-		margin-left: 10%;
-	}
-	
-	#name {
-		
-	}
-	
-	#rating { 
-		height: 20px;
-		//float: right;
-	}
-	
-	#lower-third {
-		height: 100%;
-		background-color: white;
-	}
-</style>
 <head>
+<link rel="stylesheet" type="text/css" href="./css/details.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
 </head>
@@ -137,25 +30,63 @@
 
 	<div id="lower-third">
 		<div id="Menu" class="tabcontent">
-		  <h3>Menu</h3>
 		  <p>This is where the menu goes.</p>
 		</div>
 
 		<div id="Reviews" class="tabcontent">
-		  <h3>Reviews</h3>
-		  <p>This is where reviews go.</p>
+			<div id="review-list">
+				<div id="user-review">
+					<h4 class="review-name">Robert</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Love this place. Been to here many many times over the last 10 years. Very nice people - Maggie is the best. :)</p>
+				</div>					
+				<div id="user-review">
+					<h4 class="review-name">Philip</h4>				
+					<img id="personal-review" src="./resources/images/5w.png">
+					<p class="review">I dined with a couple people in a very social, cozy atmosphere. I love the work of art that this company sells</p>
+				</div>					
+				<div id="user-review">
+					<h4 class="review-name">Grant</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Coffee is ok. But always volcanic hot..with no cardboard cup wraps.</p>
+				</div>
+				<div id="user-review">
+					<h4 class="review-name">Shayla</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Seem to alway get my husband steep tea wrong, my coffee is always perfect</p>
+				</div>
+				<div id="user-review">
+					<h4 class="review-name">Style</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Clean and orders are done pretty fast. Doesn't get very busy.</p>
+				</div>
+				<div id="user-review">
+					<h4 class="review-name">Kevin</h4>
+					<img id="personal-review" src="./resources/images/1w.png">
+					<p class="review">By far the worse location and it's not even busy. Waited for 10mins to be acknowledge and everyone starred at me and to top it off they attend to another customer who was waiting after me</p>
+				</div>
+			</div>
 		</div>
 
 		<div id="Map" class="tabcontent">
-		  <h3>Map</h3>
-		  <p>This is where a map goes.</p>
+			<img id="map-picture" src="./resources/images/map.png">
+			<div id="directions">
+				<h3>Directions</h3>
+				<p>Head southeast on Gillson St toward Dafoe Rd W</p>
+				<p>Turn right onto Dafoe Rd W</p>
+				<p>Turn left onto Maclean Crescent</p>
+				<p>Turn right onto Freedman Crescent</p>
+				<p>Turn left onto Kings Dr</p>
+				<p>Turn right onto Silverstone Ave</p>
+				<p>Turn right onto McMasters Rd</p>
+			</div>
 		</div>
 
 	</div>	
 
 	<script>
 		$(document).ready(function(){
-			var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
+			var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/rs/milestones/Milestone3/resources";
 
 			$("#logo").attr("src", "./resources/images/logo.png");			
 			
@@ -178,7 +109,7 @@
 						restList.push(obj);
 					}
 			
-					var id = 43;
+					var id = 0;
 			
 					// @TODO: load breadcrumb
 					$('<a>',{
@@ -194,11 +125,12 @@
 					}).appendTo('#breadcrumb');
 					$("#breadcrumb").append(" > " + restList[id].name);
 					
+					document.title = restList[id].name + " | Cravings.com";
 					
 					// load display
 					$("#rest-pic").attr('src', restList[id].picture);
 					$("#name").text(restList[id].name);
-					$("#address").text(restList[id].address + " " + restList[id].city + ", " + restList[id].province + " " + restList[id].postalCode);
+					$("#address").text(restList[id].address + " " + restList[id].city + ", " + restList[id].province + ", " + restList[id].postalCode);
 					$("#site-phone").text(restList[id].phone + "  |  ");
 					$('<a>',{
 						text: restList[id].website,
