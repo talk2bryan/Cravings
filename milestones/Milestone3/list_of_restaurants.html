@@ -18,23 +18,23 @@
         <div class="margin-logo-header-height"></div>
 
 
+
     <div class="col-xs-12 col-md-8">
         <div class="list-info">
             <h2>200 restaurants offering Mexican dishes</h2>
         </div>
 
         <div id="restaurant-list-container">
-            <table>
-                <tr>Here we go</tr>
-            </table>
-
-
-
+            <div id="info">
+                <img id="rest-pic" alt="restaurant front">
+                <h1 id="name"></h1>
+                <p id="address"></p>
+                <p id="phone"></p>
+                <p id="site"></p>
+                <p id="tag-price"></p>
+            </div>
         </div>
     </div>
-
-        <p id="demo" onloadstart="test()">Click me to change my HTML content (innerHTML).</p>
-
 
 
 
@@ -46,11 +46,52 @@
         </footer>
 
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
     <!--<script src="js/jquery-3.1.1.min.js"></script>-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/papaparse.js"></script>
+    <!--<script src="js/jquery-3.1.1.min.js"></script>-->
+    <!--<script src="js/papaparse.js"></script>-->
 
-    <script src="js/behaviour.js"></script>
+    <!--<script src="js/behaviour.js"></script>-->
+    <script>
+        $(document).ready(function(){
+            var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
+
+            // load restaurant
+            $.ajax({
+                type: "GET",
+                url: source + "/data.csv",
+                success: function (data) {
+                    var bufferString = Papa.unparse(Papa.parse(data).data);
+                    var arr = bufferString.split('\n');
+
+                    var restList = [];
+                    var headers = arr[0].split(',');
+                    for(var i = 1; i < arr.length; i++) {
+                        var data = arr[i].split(',');
+                        var obj = {};
+                        for(var j = 0; j < data.length; j++) {
+                            obj[headers[j].trim()] = data[j].trim();
+                        }
+                        restList.push(obj);
+                    }
+
+                    var id = 0;
+
+                    $("#name").text(restList[id].name);
+                    $("#address").text(restList[id].address + " " + restList[id].city + ", " + restList[id].province + " " + restList[id].postalCode);
+                    $("#phone").text(restList[id].phone);
+                    $("#site").text();
+                    $('<a id="link">',{
+                        text: restList[id].website,
+                        title: 'Website',
+                        href: 'http://' + restList[id].website,
+                    }).appendTo('#site');
+                    $("#tag-price").text(restList[id].tag + " - " + restList[id].price);
+                }
+            });
+        });
+    </script>
 
     </body>
 </html>
