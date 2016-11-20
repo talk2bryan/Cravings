@@ -2,11 +2,11 @@
 
 
 $(document).ready(function() {
-    var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
+    var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3";
     // load row
     $.ajax({
             type: "GET",
-            url: source +"/data.csv",
+            url: source +"/resources/data.csv",
             success: function (data) {
                 var bufferString = Papa.unparse(Papa.parse(data).data);
                 var arr = bufferString.split('\n');
@@ -35,25 +35,63 @@ $(document).ready(function() {
 
                 var row = restList[ii];
 
-                // var rowDiv = document.createElement('div');
-                // rowDiv.className='row';
-                //
-                // var logoDiv = document.createElement('div');
-                // logoDiv.className = 'restaurant-logo';
-                // var imgDiv = document.createElement('img');
-                // imgDiv.className = 'lazy';
-                // imgDiv.setAttribute('src',row.picture);
-                // imgDiv.style = 'display: inline';
-                // logoDiv.appendChild(imgDiv);
-                //
-                // rowDiv.appendChild(logoDiv);
-                //
-                // innerDiv.appendChild(rowDiv);
-                innerDiv.append(row.name);
+                var aDiv = document.createElement('a');
+                aDiv.className = 'show-loading';
+                aDiv.setAttribute('href',source+"/Prototype.html"); //link to restaurant
 
-                iDiv.appendChild(innerDiv);
+                var fullDiv = document.createElement('span');
+                fullDiv.className = 'full-div';
+                aDiv.appendChild(fullDiv);
+
+                // logoDiv.setAttribute('href',source+"/Prototype.html");
+
+                var parentRow = document.createElement('div');
+                parentRow.className='row';
+
+                var restLogo = document.createElement('div');
+                restLogo.className = 'restaurant-logo';
+
+                var innerLogoA = document.createElement('a');
+                innerLogoA.className = 'show-loading';
+                innerLogoA.setAttribute('href',source+"/Prototype.html");//link to restaurant
+
+                var logoImg = document.createElement('img');
+                logoImg.className = 'logo-img';
+                logoImg.setAttribute('src',row.picture);
+
+                innerLogoA.appendChild(logoImg);
+                restLogo.appendChild(innerLogoA);
+
+                var restInfoDiv = document.createElement('div');
+                restInfoDiv.className = 'col-xs-10';
+
+                var rowNoGuttersDiv = document.createElement('div');
+                rowNoGuttersDiv.className = 'row no-gutters';
+
+                var restInfoBucket = document.createElement('div');
+                restInfoBucket.className = 'col-xs-12 restaurant-name-content';
+                var restName = document.createElement('span');
+                restName.className = 'restaurant-name';
+                restName.textContent = row.name;
+                var restLoc = document.createElement('div');
+                restLoc.className = 'location-name';
+                restLoc.textContent = row.address + ', ' + row.city + ' ' + row.province + '. '+ row.postalCode;
+                restInfoBucket.appendChild(restName);
+                restInfoBucket.appendChild(restLoc);
+
+                rowNoGuttersDiv.appendChild(restInfoBucket);
+                restInfoDiv.appendChild(rowNoGuttersDiv);
+
+                parentRow.appendChild(restLogo);
+                parentRow.appendChild(restInfoDiv);
+
+                //encapsulate everything as a row
+                innerDiv.appendChild(aDiv);
+                innerDiv.appendChild(parentRow);
+
+                iDiv.appendChild(innerDiv); //add it to growing list of restaurants
             }
-            document.getElementById('restaurant-list-container').appendChild(iDiv);
+            document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
         }
     });
 });
