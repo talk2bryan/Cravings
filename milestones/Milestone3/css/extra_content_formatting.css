@@ -114,7 +114,7 @@ position: relative;
 
 #restaurant-list-container {
     min-height: 740px;
-    margin-top: 50px;
+    margin-top: 0px;
     padding-left: 20%;
     padding-right: 20%;
 }

@@ -22,13 +22,14 @@ $(document).ready(function() {
                     restList.push(obj);
                 }
 
-            document.getElementById("list-info").innerHTML = restList.length-1 + " restaurants offering X food";
+
+                document.getElementById("list-info").innerHTML = restList.length-1 + " restaurants offering X food";
 
                 var iDiv = document.createElement('div');
-            iDiv.id = 'block';
-            iDiv.className = 'block';
+                iDiv.id = 'block';
+                iDiv.className = 'block';
 
-            for (var ii = 0; ii<restList.length-1; ii++) {
+                for (var ii = 0; ii<restList.length-1; ii++) {
                 var innerDiv = document.createElement('div');//one restaurant row
                 innerDiv.className = 'restaurant-list';
                 innerDiv.id = 'block-2';
@@ -57,7 +58,13 @@ $(document).ready(function() {
 
                 var logoImg = document.createElement('img');
                 logoImg.className = 'logo-img';
+                console.log(row.picture);
+                    //bug here, TODO
+                    //https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/Prototype.html
+                    //https://raw.githubusercontent.com/talk2bryan/Cravings/master/images/hseih.jpg
                 logoImg.setAttribute('src',row.picture);
+                    //workaround
+                    // logoImg.setAttribute('src',source+ '/resources/images'+row.picture);
 
                 innerLogoA.appendChild(logoImg);
                 restLogo.appendChild(innerLogoA);
