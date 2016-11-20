@@ -97,7 +97,24 @@ position: relative;
     -moz-transition: all 0.25s ease;
     transition: all 0.25s ease;
 }
+.restaurant-list .restaurant-logo {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.list-info {
+    font-size: 20px;
+    margin-top: 0;
+    line-height: 40px;
+    font-style: normal;
+}
 
+.restaurant-list img {
+    border: solid 1px #DDD;
+}
+img {
+    vertical-align: middle;
+}
 html{
     font-size: 10px;
     font-family: sans-serif;

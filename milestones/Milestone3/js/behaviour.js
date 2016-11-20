@@ -22,28 +22,37 @@ $(document).ready(function() {
                     restList.push(obj);
                 }
 
-            var iDiv = document.createElement('div');
+            document.getElementById("list-info").innerHTML = restList.length-1 + " restaurants offering X food";
+
+                var iDiv = document.createElement('div');
             iDiv.id = 'block';
             iDiv.className = 'block';
 
-            for (var ii = 1; ii< restList.length; i++) {
+            for (var ii = 0; ii<restList.length-1; ii++) {
                 var innerDiv = document.createElement('div');//one restaurant row
                 innerDiv.className = 'restaurant-list';
-                innerDiv.className = 'block-2';
+                innerDiv.id = 'block-2';
 
                 var row = restList[ii];
-                $("#block-2").html("Hello World");
-                $("#block-2").html(row.name);
-                // innerDiv.append($("<h4 />", row.name));
-                iDiv.appendChild(innerDiv);
-                // var obj = {};
-                // for (var j = 0; j < row.length; j++) {
-                //     // obj[headers[j].trim()] = row[j].trim();
-                // }
-                // restList.push(obj);
-            }
-                document.getElementsByTagName('body')[0].appendChild(iDiv);            // idName.appendChild(innerDiv);
 
+                // var rowDiv = document.createElement('div');
+                // rowDiv.className='row';
+                //
+                // var logoDiv = document.createElement('div');
+                // logoDiv.className = 'restaurant-logo';
+                // var imgDiv = document.createElement('img');
+                // imgDiv.className = 'lazy';
+                // imgDiv.setAttribute('src',row.picture);
+                // imgDiv.style = 'display: inline';
+                // logoDiv.appendChild(imgDiv);
+                //
+                // rowDiv.appendChild(logoDiv);
+                //
+                // innerDiv.appendChild(rowDiv);
+                innerDiv.append(row.name);
+
+                iDiv.appendChild(innerDiv);
+            }
             document.getElementById('restaurant-list-container').appendChild(iDiv);
         }
     });
