@@ -1,22 +1,13 @@
 
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed!";
-}
-function test(){
-    var div = document.getElementById('restaurant-list-container');
 
-    div.innerHTML = div.innerHTML + 'Extra stuff';
-    var ok = "haha";
-    document.getElementsByClassName('body')[0].append(ok);
-}
+
 $(document).ready(function() {
-    var source = "../resources";
+    var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
     // load row
     $.ajax({
             type: "GET",
             url: source +"/data.csv",
             success: function (data) {
-                test();
                 var bufferString = Papa.unparse(Papa.parse(data).data);
                 var arr = bufferString.split('\n');
 
@@ -32,16 +23,18 @@ $(document).ready(function() {
                 }
 
             var iDiv = document.createElement('div');
-            iDiv.id = 'body';
+            iDiv.id = 'block';
             iDiv.className = 'block';
 
             for (var ii = 1; ii< restList.length; i++) {
                 var innerDiv = document.createElement('div');//one restaurant row
                 innerDiv.className = 'restaurant-list';
+                innerDiv.className = 'block-2';
 
                 var row = restList[ii];
-                // innerDiv.append($("<h4 />", text(row.name)));
-                innerDiv.appendData("Hello");
+                $("#block-2").html("Hello World");
+                $("#block-2").html(row.name);
+                // innerDiv.append($("<h4 />", row.name));
                 iDiv.appendChild(innerDiv);
                 // var obj = {};
                 // for (var j = 0; j < row.length; j++) {
@@ -51,7 +44,7 @@ $(document).ready(function() {
             }
                 document.getElementsByTagName('body')[0].appendChild(iDiv);            // idName.appendChild(innerDiv);
 
-            document.getElementById('body').appendChild(iDiv);
+            document.getElementById('restaurant-list-container').appendChild(iDiv);
         }
     });
 });
