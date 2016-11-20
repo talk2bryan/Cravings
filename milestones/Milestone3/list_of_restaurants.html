@@ -27,11 +27,13 @@
             <table>
                 <tr>Here we go</tr>
             </table>
-            <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
+
 
 
         </div>
     </div>
+
+        <p id="demo" onloadstart="test()">Click me to change my HTML content (innerHTML).</p>
 
 
 
@@ -44,39 +46,11 @@
         </footer>
 
     </div>
-
-    <script src="js/jquery-3.1.1.min.js"></script>
+    <!--<script src="js/jquery-3.1.1.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
     <script src="js/papaparse.js"></script>
-    <!--<script src="js/behaviour.js"></script>-->
-    <script>
-        $(document).ready(function() {
 
-            // load row
-            $.ajax({
-                type: "GET",
-                url: "./resources/data.csv",
-                success: function (data) {
+    <script src="js/behaviour.js"></script>
 
-                    var bufferString = Papa.unparse(Papa.parse(data).data);
-                    var arr = bufferString.split('\n');
-
-                    var iDiv = document.createElement('div');
-                    iDiv.id = 'body';
-                    iDiv.className = 'block';
-
-                    for (var i = 1; i < arr.length; i++) {
-                        var innerDiv = document.createElement('div');//one restaurant row
-                        innerDiv.className = 'restaurant-list';
-
-                        var row = arr[i].split(',');
-                        innerDiv.append(row[0]);
-//                        innerDiv.append($("<h4 />", row[0]));
-                        iDiv.appendChild(innerDiv);
-                    }
-                    document.getElementById('restaurant-list-container').appendChild(iDiv);
-                }
-            });
-        });
-    </script>
     </body>
 </html>
