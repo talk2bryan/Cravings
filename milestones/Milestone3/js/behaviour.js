@@ -58,7 +58,7 @@ $(document).ready(function() {
 
                     var innerLogoA = document.createElement('a');
                     innerLogoA.className = 'show-loading';
-                    innerLogoA.setAttribute('href', source + "/Prototype.html");//link to restaurant
+                    innerLogoA.setAttribute('href', source + row.id+".html");//link to restaurant
 
                     var logoImg = document.createElement('img');
                     logoImg.className = 'logo-img';
