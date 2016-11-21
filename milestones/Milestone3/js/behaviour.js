@@ -243,5 +243,5 @@ function search_results(){
 
     searchstring= searchstring.charAt(0).toUpperCase() + searchstring.slice(1);
     var results = "./"+ searchstring+".html";
-    window.open(results);
+    window.open(results,"_self");
 }
