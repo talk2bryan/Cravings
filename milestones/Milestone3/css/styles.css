@@ -27,20 +27,21 @@
   {
     text-align: centre;
   }
+
   input
   {
     width:900px;
     border:2px solid #ccc;
     border-radius:4px;
     font-size:30px;
-    background color:white;
-    background-image:url('homepage_images/search-icon-light-grey-md.png');
+    background-color:white;
+    background-image:url('../resources/images/search-icon-light-grey-md.png');
     background-position:10px 10px;
     background-size:20px;
     background-repeat:no-repeat;
     padding:12px 20px 12px 40px;
-   
   }
+
 .button
 {
     background-color: blue;
