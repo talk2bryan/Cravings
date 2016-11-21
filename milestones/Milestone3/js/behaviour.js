@@ -44,7 +44,7 @@ $(document).ready(function() {
 
                     var aDiv = document.createElement('a');
                     aDiv.className = 'show-loading';
-                    aDiv.setAttribute('href', source + "/Prototype.html"); //link to restaurant
+                    aDiv.setAttribute('href', "./"+row.id+".html");//source + "/Prototype.html"); //link to restaurant
 
                     var fullDiv = document.createElement('span');
                     fullDiv.className = 'fill-div';
