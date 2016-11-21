@@ -2,6 +2,7 @@
 
 
 $(document).ready(function() {
+
     var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3";
     // load row
     $.ajax({
@@ -34,7 +35,7 @@ $(document).ready(function() {
 
                     var innerDiv = document.createElement('div');//one restaurant row
                     innerDiv.className = 'restaurant-list';
-                    innerDiv.id = 'block-2';
+                    // innerDiv.id = 'block-2';
 
 
                     var row = restList[ii];
@@ -119,7 +120,7 @@ $(document).ready(function() {
 
 
                     //$("#rating").attr("src", "./resources/images/" + restList[id].rating + ".png");
-                    //appned rating two lines after this...
+                    //append rating two lines after this...
                     restInfoBucket.appendChild(restName);
                     restInfoBucket.appendChild(restLoc);
                     restInfoBucket.appendChild(ratingsRowDiv);
@@ -130,16 +131,50 @@ $(document).ready(function() {
 
                     restInfoDiv.appendChild(rowNoGuttersDiv);
 
+
+                    var rightPanel = document.createElement('div');
+                    rightPanel.className = 'col-xs-4 restaurant-details-right-panel';
+                    var rightContent = document.createElement('div');
+                    rightContent.className='vertical-align-content';
+                    var contentRow = document.createElement('div');
+                    contentRow.className='row';
+                    var actualContent = document.createElement('div');
+                    actualContent.className='col-xs-12 eta-info text-center';
+                    var divMiles = document.createElement('div');
+                    divMiles.className='info-title';
+                    divMiles.textContent = row.distance+" km";
+                    var divDollars = document.createElement('div');
+                    divDollars.className='delivery-eta';
+
+                    var dollar_symbols="";
+                    for(var dd=0;dd<row.ratingint;dd++){ dollar_symbols=dollar_symbols+"$";}
+                    divDollars.textContent =dollar_symbols;
+
+                    actualContent.appendChild(divMiles);
+                    actualContent.appendChild(divDollars);
+                    contentRow.appendChild(actualContent);
+                    rightContent.appendChild(contentRow);
+                    rightPanel.appendChild(rightContent);
+
                     parentRow.appendChild(restLogo);
                     parentRow.appendChild(restInfoDiv);
+                    parentRow.appendChild(rightPanel);
+
+
+
+
+
+
 
                     //encapsulate everything as a row
                     innerDiv.appendChild(aDiv);
                     innerDiv.appendChild(parentRow);
 
-                    iDiv.appendChild(innerDiv); //add it to growing list of restaurants
+                    // iDiv.appendChild(innerDiv); //add it to growing list of restaurants
+                    document.getElementById('restaurant-list-container').appendChild(innerDiv); //add it to growing list of restaurants
+
                 }
-                document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
+                // document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
             }
     });
 });
