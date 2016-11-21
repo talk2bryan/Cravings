@@ -1,39 +1,78 @@
-.input
+
+
+.img
 {
-  font-family: Helvetica;
-  font-size: 80%;
-  text-align: left;
-  color: black;
+  text-align: center;
 }
-.craves
+
+.bodyStyle
 {
-font-family: lucida handwriting;
-font-size:300%;
-text-align: center;
-color: blue;
+  background-color:#f1f1f1;
+  font-family:Arial;
+  font-size:30px;
+  text-align: center;
+
 }
-.myNewStyle
+#header 
+  {
+    background-color:FireBrick;
+  }
+  #logo 
+  {
+    padding: 5px;
+    height:100px;
+  }
+  #picture{
+    position:centre;
+  }
+  .in
+  {
+    text-align: centre;
+  }
+  input
+  {
+    width:900px;
+    border:2px solid #ccc;
+    border-radius:4px;
+    font-size:30px;
+    background color:white;
+    background-image:url('search-icon-light-grey-md.png');
+    background-position:10px 10px;
+    background-size:20px;
+    background-repeat:no-repeat;
+    padding:12px 20px 12px 40px;
+   
+  }
+.button
 {
-font-family: lucida handwriting;
-font-size:200%;
-text-align: left;
-color: blue;
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 75%;
+    margin: 4px 2px;
+    cursor: pointer;
 }
+
 .textFormatting
 {
-  text-align:right;
-  color:blue;
-  font-size:140%;
+  
+  color:red;
+  font-size:125%;
 }
 .carouselbox 
       {
-       background-color:yellow;
+       
       font-size: 2%;
-      width: 800px;
+      width: 200px;
       height: 300px;
-      position: relative;
-      margin: 1em;
+      position: center;
+      margin: 2px;
       overflow: hidden;
+
         }
     .content
     {
@@ -79,7 +118,7 @@ color: blue;
     }
      .active li 
     {
-      position: absolute;
+      position: center;
       top: 30px;
       pointer-events: none;
       opacity: 0;
