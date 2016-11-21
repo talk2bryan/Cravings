@@ -1,5 +1,4 @@
 /*This will contain all out content formatting that bootstrap does not provide*/
-
 @media (min-width: 992px){
     .col-md-8 {
         width: 66.66667%;
@@ -37,6 +36,48 @@ position: relative;
 .logo-header{
     background-color: FireBrick;
     height: 100px;
+}
+
+.restaurant-list .fill-div {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.full-height, .restaurant-list .fill-div{
+    height: 100%;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, del, img, s, strong, var, b, u, i, center, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, footer, header, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width: 992px), (min-width: 1200px){
@@ -85,6 +126,25 @@ position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
+}
+.stars .filled {
+    color: #EE9F00;
+    font-size: 20px;
+}
+
+.ion-icon {
+    display: inline-block;
+    font-family: 'Ionicons';
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 24px;
 }
 .row.no-gutters>[class^='col-'], .row.no-gutters>[class*=' col-'] {
     padding-right: 0;

@@ -44,10 +44,8 @@ $(document).ready(function() {
                     aDiv.setAttribute('href', source + "/Prototype.html"); //link to restaurant
 
                     var fullDiv = document.createElement('span');
-                    fullDiv.className = 'full-div';
+                    fullDiv.className = 'fill-div';
                     aDiv.appendChild(fullDiv);
-
-                    // logoDiv.setAttribute('href',source+"/Prototype.html");
 
                     var parentRow = document.createElement('div');
                     parentRow.className = 'row';
@@ -61,35 +59,63 @@ $(document).ready(function() {
 
                     var logoImg = document.createElement('img');
                     logoImg.className = 'logo-img';
-                    console.log(row.picture);
-                    //bug here, TODO
-                    //https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/Prototype.html
-                    //https://raw.githubusercontent.com/talk2bryan/Cravings/master/images/hseih.jpg
+
+
                     logoImg.setAttribute('src', row.picture);
-                    //workaround
-                    // logoImg.setAttribute('src',source+ '/resources/images'+row.picture);
 
                     innerLogoA.appendChild(logoImg);
                     restLogo.appendChild(innerLogoA);
 
                     var restInfoDiv = document.createElement('div');
-                    restInfoDiv.className = 'col-xs-10';
+                    restInfoDiv.className = 'col-xs-8';
 
                     var rowNoGuttersDiv = document.createElement('div');
                     rowNoGuttersDiv.className = 'row no-gutters';
 
                     var restInfoBucket = document.createElement('div');
                     restInfoBucket.className = 'col-xs-12 restaurant-name-content';
+
                     var restName = document.createElement('span');
                     restName.className = 'restaurant-name';
                     restName.textContent = row.name;
+
                     var restLoc = document.createElement('div');
                     restLoc.className = 'location-name';
                     restLoc.textContent = row.address + ', ' + row.city + ' ' + row.province + '. ' + row.postalCode;
+
+                    var ratingsRowDiv = document.createElement('div');
+                    ratingsRowDiv.className = 'row';
+
+                    var starsClass = document.createElement('div');
+                    starsClass.className = 'col-xs-12 stars';
+
+                    var num_i = row.rating;
+
+                    console.log(num_i);
+
+                    for (var j = 0; j<num_i; j++) {
+                        //old method
+                        // var oneStarDiv = document.createElement('i');
+                        // oneStarDiv.className = 'ion-icon ion-android-star filled';
+
+                        //new method
+                        var oneStarDiv = document.createElement('span');
+                        oneStarDiv.className='glyphicon glyphicon-star';
+                        oneStarDiv.setAttribute('aria-hidden',true);
+                        starsClass.appendChild(oneStarDiv);
+                    }
+
+                    ratingsRowDiv.appendChild(starsClass);
+                    // ratingsRowDiv.textContent = '::after';
+
+                    //appned rating two lines after this...
                     restInfoBucket.appendChild(restName);
                     restInfoBucket.appendChild(restLoc);
+                    restInfoBucket.appendChild(ratingsRowDiv);
 
                     rowNoGuttersDiv.appendChild(restInfoBucket);
+
+                    // rowNoGuttersDiv.append('::after');
                     restInfoDiv.appendChild(rowNoGuttersDiv);
 
                     parentRow.appendChild(restLogo);
