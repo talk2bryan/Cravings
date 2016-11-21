@@ -279,7 +279,7 @@
 			
 					var id = 0;
 			
-					// @TODO: load breadcrumb
+					// load breadcrumb
 					$('<a>',{
 						text: "Home",
 						title: 'Home',
@@ -289,7 +289,7 @@
 					$('<a>',{
 						text: restList[id].tag,
 						title: 'Cuisine',
-						href: "./" + restList[id].tag + ".html",
+						href: "./list_of_restaurants.html",
 					}).appendTo('#breadcrumb');
 					$("#breadcrumb").append(" > " + restList[id].name);
 					

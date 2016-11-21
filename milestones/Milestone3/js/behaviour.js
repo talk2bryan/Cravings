@@ -95,7 +95,7 @@ $(document).ready(function() {
                     var starImg = document.createElement('img');
                     starImg.className = 'logo-img';
                     cust_rating = row.rating;
-                    starImg.setAttribute('src',source+'/resources/images/'+cust_rating+'.png');
+                    starImg.setAttribute('src',source+'/resources/images/'+cust_rating+'w.png');
                     starsClass.appendChild(starImg);
 
 
