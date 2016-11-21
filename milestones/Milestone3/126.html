@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./css/details.css">
+<link rel="icon" href="./resources/images/icon.png">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+</head>
+<body>
+	<div id="header">
+		<img id="logo">
+	</div>
+	
+	<p id="breadcrumb"></p>
+	
+	<div id="info">
+		<img id="rest-pic" alt="restaurant front">
+		<h1 id="name"></h1>
+		<p id="address"></p>
+		<p id="site-phone"></p>
+		<p id="tag-price"></p>
+		<img id="rating">
+	</div>
+
+
+	<ul class="tab">
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Menu')" id="defaultOpen">Menu</a></li>
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Reviews')">Reviews</a></li>
+	  <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'Map')">Map</a></li>
+	</ul>
+
+	<div id="lower-third">
+		<div id="Menu" class="tabcontent">
+			<!-- Many menu items taken from Stella's Cafe - https://www.skipthedishes.com/stellas-cafe-and-bakery-pembina/order -->
+			<div class="sub-menu" style="margin-top:0px;">		
+				<h3 class="sub-heading">Breakfast</h3>
+				<p class="sub-desc"><font size=-1>Served 6:00 am - 11:00 am</font></p>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CAFE BREAKFAST - $8.95</h5>
+					<p class="menu-item-desc">Two eggs cooked any style, ham, bacon, or grass-fed beef sausage, accompanied by golden hash</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">TOFU SCRAMBLE - $11.50</h5>
+					<p class="menu-item-desc">Sauteed seasoned tofu, tomatoes, onions, and red peppers on a bed of fresh arugula.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">BREAKFAST SANDWICH - $6.95</h5>
+					<p class="menu-item-desc">Two fried eggs, tomato slices, cheddar cheese, and mayonnaise on toasted multi grain bread.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">BACON AND EGG CROISSANT - $6.95</h5>
+					<p class="menu-item-desc">Two scrambled eggs, bacon, tomato slices, cheddar cheese, and mayonnaise on a grilled croissant.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">OATMEAL - $6.75</h5>
+					<p class="menu-item-desc">Wheat-free, local, slow-cooked oats served hot and steamy with butter, brown sugar, and milk.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">PANCAKE BREAKFAST - $9.75</h5>
+					<p class="menu-item-desc">Two buttermilk pancakes, two eggs, and your choice of ham, bacon, or grass-fed beef sausage.</p>
+				</div>
+			</div>	
+			
+			<div class="sub-menu">
+				<h3 class="sub-heading">Starters</h3>
+				<p class="sub-desc"><font size=-1>Start your meal off right with any of these delicious appetizers</font></p>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">STARTER HOUSE SALAD - $4.95</h5>
+					<p class="menu-item-desc">A starter size of the house salad which includes romaine lettuce, arugula, red cabbage.  Your choice of dressing</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">STARTER CAESAR SALAD - $4.95</h5>
+					<p class="menu-item-desc">Crisp romaine lettuce, creamy garlic dressing, croutons, and grated Parmesan cheese.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">GARLIC CHEESE TOAST - $5.95</h5>
+					<p class="menu-item-desc">A grilled garlic baguette, baked with cheddar cheese, Swiss cheese, and Parmesan cheese.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CHICKEN WINGS - $8.95</h5>
+					<p class="menu-item-desc">Breaded and deep fried chicken wings, tossed in spicy buffalo sauce.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">NACHOS - $9.99</h5>
+					<p class="menu-item-desc">Our in house fried tortilla chips covered in seasoned beef, cheese, tomatoes, jalapenos, guacamole, and black olives. </p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CALAMARI - $11.45</h5>
+					<p class="menu-item-desc">Fried calamari; tender pieces of squid in a light, crispy batter.</p>
+				</div>	
+			</div>
+
+			<div class="sub-menu">		
+				<h3 class="sub-heading">Sandwiches & Burgers</h3>
+				<p class="sub-desc"><font size=-1>All sandwiches come with choice of fries or side salad.</font></p>
+				<div class="menu-item">		
+					<h5 class="menu-item-heading">CLUB SANDWICH - $11.45</h5>
+					<p class="menu-item-desc">Oven-roasted chicken, crisp bacon, cheddar cheese, lettuce, tomato, and mayonnaise.</p>
+				</div>		
+				<div class="menu-item">		
+					<h5 class="menu-item-heading">GUACAMOLE B.L.T SANDWICH - $10.25</h5>
+					<p class="menu-item-desc">Housemade guacamole, three strips of bacon, lettuce, ripe tomato, and mayo on cracked wheat bread.</p>
+				</div>		
+				<div class="menu-item">		
+					<h5 class="menu-item-heading">BACON CHEESEBURGER - $11.95</h5>
+					<p class="menu-item-desc">Two all beef patties, two strips of bacon, cheddar cheese, lettuce, tomato, onion on a toasted kaiser roll.</p>
+				</div>		
+				<div class="menu-item">		
+					<h5 class="menu-item-heading">CHICKEN BURGER - $12.45</h5>
+					<p class="menu-item-desc">Marinated chicken breast, tomato, lettuce, mayonnaise, crispy onions, and a dollop of cilantro</p>
+				</div>		
+				<div class="menu-item">		
+					<h5 class="menu-item-heading">BBQ BURGER - $10.45</h5>
+					<p class="menu-item-desc">Two all beef patties, mozzarella cheese, lettuce, tomato, and fried onion on a whole wheat bun.</p>
+				</div>		
+			</div>		
+			
+			<!-- main course items taken from Earl's menu https://earls.ca/locations/bellevue/menu/kitchen-->
+			<div class="sub-menu">		
+				<h3 class="sub-heading">Main Courses</h3>
+				<p class="sub-desc"><font size=-1>Steaks, Chicken, Fish, or Ribs</font></p>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">ATLANTIC SALMON - $19.95</h5>
+					<p class="menu-item-desc">With feta, caper and dill aioli, jasmine rice and seasonal vegetables.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">BBQ RIBS   full - $35.45 | half- $25.45</h5>
+					<p class="menu-item-desc">Tender pork, braised low and slow, with warm potato salad, coleslaw.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CAJUN CHICKEN - $20.95</h5>
+					<p class="menu-item-desc">Blackened double breast of chicken, garlic butter, warm potato salad, coleslaw.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">NEW YORK STRIP   10oz - $23.95 | 12oz -$32.45</h5>
+					<p class="menu-item-desc">AAA grade Canadian beef, served with choice of 2 sides.</p>
+				</div>		
+			</div>		
+			
+			<div class="sub-menu">	
+				<h3 class="sub-heading">Desserts</h3>
+				<p class="sub-desc"><font size=-1>The perfect way to end a meal.</font></p>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CHOCOLATE TORTE - $6.95</h5>
+					<p class="menu-item-desc">Flour-less cake made with rich dark chocolate, butter, sugar, and eggs, topped with raspberry sauce</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">CARROT CAKE - $6.95</h5>
+					<p class="menu-item-desc">Two layers of rich carrot cake with vanilla cream cheese icing.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">KEY LIME PIE - $6.95</h5>
+					<p class="menu-item-desc">Lime, cream, and eggs set in a graham crust, topped with whipped cream and finely-cut lime zest.</p>
+				</div>
+				<div class="menu-item">
+					<h5 class="menu-item-heading">NEW YORK CHEESECAKE - $7.95</h5>
+					<p class="menu-item-desc">Decadent New York style cheesecake in a graham cracker crust, topped with cherries</p>
+				</div>	
+			</div>					
+		</div>
+
+		<!-- Reviews taken from Google Reviews of Tim Hortons in Winnipeg and slightly modified
+			https://www.google.com/maps/place/Tim+Hortons/@49.7982812,-97.1596475,14.67z/data=!4m10!1m2!2m1!1sgoogle+tim+hortons+reviews!3m6!1s0x0:0x7390e44e9f5f88af!8m2!3d49.8042758!4d-97.1569705!9m1!1b1 -->
+		<div id="Reviews" class="tabcontent">
+			<div id="review-list">
+				<div>		
+					<h4 class="review-name">Robert</h4>
+					<img id="personal-review" src="./resources/images/5w.png">
+					<p class="review">Love this place. Been to here many many times over the last 10 years. Very nice people - Maggie is the best. :)</p>
+				</div>
+				<div>
+					<h4 class="review-name">Philip</h4>
+					<img id="personal-review" src="./resources/images/5w.png">
+					<p class="review">I dined with a couple people in a very social, cozy atmosphere. I love the work of art that this company sells</p>
+				</div>
+				<div>
+					<h4 class="review-name">Grant</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Coffee is ok. But always volcanic hot..with no cardboard cup wraps.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Shayla</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Seem to alway get my husband steep tea wrong, my coffee is always perfect</p>
+				</div>
+				<div>
+					<h4 class="review-name">Style</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Clean and orders are done pretty fast. Doesn't get very busy.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Kevin</h4>
+					<img id="personal-review" src="./resources/images/1w.png">
+					<p class="review">By far the worse location and it's not even busy. Waited for 10mins to be acknowledge and everyone starred at me and to top it off they attend to another customer who was waiting after me</p>
+				</div>
+				<div>
+					<h4 class="review-name">Dexter</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Pretty quick service. The food is typical for a place like this; not that great. The staff are friendly.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Paulo</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">The sandwich combos are great.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Chantelle</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Went here last night.  Order got screwed up but staff was very friendly and fixed it.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Thomas</h4>
+					<img id="personal-review" src="./resources/images/4w.png">
+					<p class="review">Clean. Not a very busy place. Good for a quick stop the on Highway to rest.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Milind</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Too slow service. Very busy place with short staff</p>
+				</div>
+				<div>
+					<h4 class="review-name">Fred</h4>
+					<img id="personal-review" src="./resources/images/5w.png">
+					<p class="review">Best place in the southern Winnipeg.</p>
+				</div>
+				<div>
+					<h4 class="review-name">Joshua</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Generally busy</p>
+				</div>
+				<div>
+					<h4 class="review-name">Erika</h4>
+					<img id="personal-review" src="./resources/images/3w.png">
+					<p class="review">Just okay. It's a hit or miss. Sometimes the customer service is awful, sometimes okay. Sometimes it's made/done perfect, other times my order is completely wrong.</p>
+				</div>	
+			</div>
+		</div>
+
+		<div id="Map" class="tabcontent">
+			<img id="map-picture" src="./resources/images/map.png">
+			<div id="directions">
+				<h3>Directions</h3>
+				<p>Head southeast on Gillson St toward Dafoe Rd W</p>
+				<p>Turn right onto Dafoe Rd W</p>
+				<p>Turn left onto Maclean Crescent</p>
+				<p>Turn right onto Freedman Crescent</p>
+				<p>Turn left onto Kings Dr</p>
+				<p>Turn right onto Silverstone Ave</p>
+				<p>Turn right onto McMasters Rd</p>
+			</div>
+		</div>
+
+	</div>	
+
+	<script>
+		$(document).ready(function(){
+			var source = "https://raw.githubusercontent.com/talk2bryan/Cravings/master/milestones/Milestone3/resources";
+
+			$("#logo").attr("src", "./resources/images/logo.png");			
+			
+			// load restaurant
+			$.ajax({
+				type: "GET",
+				url: source + "/data.csv",
+				success: function (data) {
+					var bufferString = Papa.unparse(Papa.parse(data).data);
+					var arr = bufferString.split('\n'); 
+					
+					var restList = [];
+					var headers = arr[0].split(',');
+					for(var i = 1; i < arr.length; i++) {
+						var data = arr[i].split(',');
+						var obj = {};
+						for(var j = 0; j < data.length; j++) {
+							obj[headers[j].trim()] = data[j].trim();
+						}
+						restList.push(obj);
+					}
+			
+					var id = 25;
+			
+					// @TODO: load breadcrumb
+					$('<a>',{
+						text: "Home",
+						title: 'Home',
+						href: "./cravings_first_page.html",
+					}).appendTo('#breadcrumb');
+					$("#breadcrumb").append(" > ");
+					$('<a>',{
+						text: restList[id].tag,
+						title: 'Cuisine',
+						href: "./" + restList[id].tag + ".html",
+					}).appendTo('#breadcrumb');
+					$("#breadcrumb").append(" > " + restList[id].name);
+					
+					document.title = restList[id].name + " | Cravings.com";
+					
+					// load display
+					$("#rest-pic").attr('src', restList[id].picture);
+					$("#name").text(restList[id].name);
+					$("#address").text(restList[id].address + " " + restList[id].city + ", " + restList[id].province + ", " + restList[id].postalCode);
+					$("#site-phone").text(restList[id].phone + "  |  ");
+					$('<a>',{
+						text: restList[id].website,
+						title: 'Website',
+						href: 'http://' + restList[id].website,
+					}).appendTo('#site-phone');
+						
+					$("#tag-price").text(restList[id].tag + " - " + restList[id].price);
+					$("#rating").attr("src", "./resources/images/" + restList[id].rating + ".png");
+				}
+			});
+		});
+
+		function openTab(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+     
+</body>
+</html>
