@@ -24,8 +24,7 @@ $(document).ready(function() {
                     restList.push(obj);
                 }
 
-
-                document.getElementById("list-info").innerHTML = restList.length-1 + " restaurants offering X food";
+                document.getElementById("list-info").innerHTML = restList.length-1 + " restaurants found";
 
                 var iDiv = document.createElement('div');
                 iDiv.id = 'block';
@@ -90,24 +89,6 @@ $(document).ready(function() {
                     var ratingsRowDiv = document.createElement('div');
                     ratingsRowDiv.className = 'row';
 
-                    // var starsClass = document.createElement('div');
-                    // starsClass.className = 'col-xs-12 stars';
-                    //
-                    // var num_i = row.rating;
-                    //
-                    // console.log(num_i);
-                    //
-                    // for (var j = 0; j<num_i; j++) {
-                    //     //old method
-                    //     // var oneStarDiv = document.createElement('i');
-                    //     // oneStarDiv.className = 'ion-icon ion-android-star filled';
-                    //
-                    //     //new method
-                    //     var oneStarDiv = document.createElement('span');
-                    //     oneStarDiv.className='glyphicon glyphicon-star';
-                    //     oneStarDiv.setAttribute('aria-hidden',true);
-                    //     starsClass.appendChild(oneStarDiv);
-                    // }
 
                     var starsClass = document.createElement('div');
                     starsClass.className = 'col-xs-12 stars';
@@ -120,15 +101,10 @@ $(document).ready(function() {
 
                     ratingsRowDiv.appendChild(starsClass);
 
-
-
-                    //$("#rating").attr("src", "./resources/images/" + restList[id].rating + ".png");
-                    //append rating two lines after this...
                     restInfoBucket.appendChild(restName);
                     restInfoBucket.appendChild(restLoc);
                     restInfoBucket.appendChild(ratingsRowDiv);
 
-                    // restInfoBucket.appendChild(ratingsRowDiv);
 
                     rowNoGuttersDiv.appendChild(restInfoBucket);
 
@@ -178,17 +154,14 @@ $(document).ready(function() {
                     // iDiv.appendChild(innerDiv); //add it to growing list of restaurants
                     document.getElementById('restaurant-list-container').appendChild(innerDiv); //add it to growing list of restaurants
                 }
-                // sort_div('price-sort');
-                //less('price-sort',2);
-               // document.getElementById('restaurant-list-container').sort()
-                // document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
             }
     });
-});
+},3000);
 
+// var n = $( document.getElementById('restaurant-list-container') ).length;
+// document.getElementById("list-info").innerHTML = n + " restaurants offering X food";
 
-
-function sort_div(dd){
+function filter_div_asc(dd){
     var mylist = $('#restaurant-list-container');
 
     var listitems = mylist.children('div').get();
@@ -203,6 +176,26 @@ function sort_div(dd){
     $.each(listitems, function(index, item) {
         mylist.append(item);
     });
+    console.log(mylist);
+    document.getElementById('restaurant-list-container').appendChild(mylist);
+}
+
+function filter_div_desc(dd){
+    var mylist = $('#restaurant-list-container');
+
+    var listitems = mylist.children('div').get();
+
+    listitems.sort(function(a, b) {
+        var contentA = parseInt($(a).attr(dd));
+        var contentB = parseInt($(b).attr(dd));
+
+        return  (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
+    });
+
+    $.each(listitems, function(index, item) {
+        mylist.append(item);
+    });
+    console.log(mylist);
     document.getElementById('restaurant-list-container').appendChild(mylist);
 }
 
@@ -213,4 +206,35 @@ function less(sort_param,by_val){
             $(this).hide();
         }
     });
+}
+
+
+function updateList() {
+
+    var sort_e = document.getElementById("sel1");
+    var order_e = document.getElementById("sel2");
+    var star_e  = document.getElementById("sel3");
+    var range_e= document.getElementById("sel4");
+
+    var sort_criteria = sort_e.options[sort_e.selectedIndex].value;
+    var chrono_order = order_e.options[order_e.selectedIndex].value;
+    var star_rate_fdbk = star_e.options[star_e.selectedIndex].value;
+    var price_range = range_e.options[range_e.selectedIndex].value;
+
+    if(star_rate_fdbk != 'all'){
+        less('star-sort',star_rate_fdbk);
+    }
+    if(price_range != 'all'){
+        less('price-sort',price_range);
+    }
+    if(chrono_order != -1){
+        if(chrono_order == 0){
+            filter_div_asc(sort_criteria);
+        }
+        else
+            filter_div_desc(sort_criteria);
+    }
+
+    //reload page with params
+    window.location.reload();
 }
