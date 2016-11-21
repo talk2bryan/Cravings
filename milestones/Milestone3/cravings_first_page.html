@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang ="en">
 <head>
-	<title>cravings_first_page</title>
+	<title>Cravings | What do you crave?</title>
 	<meta charset "utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="./resources/images/icon.png">
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 	</script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
- 
 </head>
 <body >
   <div id="header">
@@ -18,10 +18,10 @@
   </div>
 
 
-    
-<input type="text" name="food" placeholder="What are you craving?">
-
-<button class="button" onclick="myFunct()">Submit</button>
+  <div id="search" style="text-align: center;">
+    <input type="text" name="food" placeholder="What are you craving?">
+    <button class="button" onclick="myFunct()">Submit</button>
+  </div>
 
  <div class="bodyStyle">
      
@@ -52,91 +52,60 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-
       <div class="item active">
         <div class="img">
-        <a href="https://www.google.ca/#q=mexican+food"><img id="picture"src="resources/images/Mexican.jpg" alt="Mexican" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/Mexican.jpg" alt="Mexican" width="660" height="445"></a>
+          <h><span><b>MEXICAN</b></span></h>
+        </div>
       </div>
-        	      <div class="textFormatting">
-                  <b><p>MEXICAN</p></b>
-                </div>
-      
-       </div>
+
       <div class="item">
         <div class="img">
-          <span>
-        <a href="https://www.google.ca/#q=italian+food"><img id="picture"src="resources/images/Italian.jpg" alt="Italian" width="660" height="445"></a></span>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/Italian.jpg" alt="Italian" width="660" height="445"></a>
+          <h><span><b>ITALIAN</b></span></h>
         </div>
-        
-        	<div class="textFormatting">
-          <p><b>ITALIAN</b></p>
-            </div>
       </div>
     
       <div class="item">
         <div class="img">
-        <a href="https://www.google.ca/#q=cajun+food"><img id="picture"src="resources/images/south-korean-food-guide.jpg" alt="Korean" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/south-korean-food-guide.jpg" alt="Korean" width="660" height="445"></a>
+          <h><span><b>KOREAN</b></span></h>
         </div>
-       
-          <div class="textFormatting">
-          <p><b>KOREAN</b></p>
-            </div>
-        
       </div>
 
       <div class="item">
         <div class="img">
-        <a href="https://www.google.ca/#q=indian+food"><img id="picture"src="resources/images/big_thumb_c9e08b4db33c9a9c0d38863dcf092cc1.jpg" alt="Japanese" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/big_thumb_c9e08b4db33c9a9c0d38863dcf092cc1.jpg" alt="Japanese" width="660" height="445"></a>
+          <h><span><b>JAPANESE</b></span></h>
         </div>
-        
-          <div class="textFormatting">
-          <p><b>JAPANESE</b></p>
-            </div>
-       
       </div>
 
       <div class="item">
         <div class="img">
-        <a href="https://www.google.ca/#q=greek+food"><img id="picture"src="resources/images/wafswectpmbr0zmug9ly.jpg" alt="Pizza" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/wafswectpmbr0zmug9ly.jpg" alt="Pizza" width="660" height="445"></a>
+          <h><span><b>PIZZA</b></span></h>
         </div>
-        
-          <div class="textFormatting">
-          <p><b>PIZZA</b></p>
-            </div>
-        
       </div>
 
       <div class="item">
         <div class="img">
-        <a href="https://www.google.ca/#q=thai+food"><img id="picture"src="resources/images/best-burgers-hero.jpg" alt="Burger" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/best-burgers-hero.jpg" alt="Burger" width="660" height="445"></a>
+          <h><span><b>BURGER</b></span></h>
         </div>
-       
-          <div class="textFormatting">
-          <p><b>BURGER</b></p>
-            </div>
-       
       </div>
 
       <div class="item">
         <div class="img">
-       <a href="https://www.google.ca/#q=chinese+food"><img id="picture"src="resources/images/Chinese.jpg" alt="Chinese" width="660" height="445"></a>
+          <a href="list_of_restaurants.html"><img id="picture"src="resources/images/Chinese.jpg" alt="Chinese" width="660" height="445"></a>
+          <h><span><b>CHINESE</b></span></h>
         </div>
-        
-          <div class="textFormatting">
-          <p><b>CHINESE</b></p>
-            </div>
-        
       </div>
 
       <div class="item">
         <div class="img">
-        <a href="https://www.google.ca/#q=pub+food"><img id="picture" src="resources/images/Pub.jpg" alt="Pub" width="660" height="445"></a>
-      </div>
-        
-          <div class="textFormatting">
-          <p><b>PUB</b></p>
-            </div>
-        
+          <a href="list_of_restaurants.html"><img id="picture" src="resources/images/Pub.jpg" alt="Pub" width="660" height="445"></a>
+          <h><span><b>PUB</b></span></h>
+        </div>
       </div>
   
     </div>
@@ -151,6 +120,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div id="lower"></div>
 </div>
 
 <script>
