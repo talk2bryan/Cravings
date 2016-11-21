@@ -178,7 +178,8 @@ $(document).ready(function() {
                     // iDiv.appendChild(innerDiv); //add it to growing list of restaurants
                     document.getElementById('restaurant-list-container').appendChild(innerDiv); //add it to growing list of restaurants
                 }
-                sort_div('price-sort');
+                // sort_div('price-sort');
+                //less('price-sort',2);
                // document.getElementById('restaurant-list-container').sort()
                 // document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
             }
@@ -205,4 +206,11 @@ function sort_div(dd){
     document.getElementById('restaurant-list-container').appendChild(mylist);
 }
 
-//
+function less(sort_param,by_val){
+
+    $('.restaurant-list').each(function(){
+        if(parseInt($(this).attr(sort_param)) != by_val){
+            $(this).hide();
+        }
+    });
+}
