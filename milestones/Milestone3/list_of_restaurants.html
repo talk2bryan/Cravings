@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Restaurants | Dishes</title>
+
+        <link rel="stylesheet" href="css/extra_content_formatting.css" >
+        <link rel="icon" href="./resources/images/icon.png">
+
+    </head>
+
+    <body>
+    <header class="logo-header">
+        <img src="resources/images/logo.png" class="logo-header">
+    </header>
+
+    <div id="positionedSearch">
+        <form action="javascript:search_results();">
+
+            <input type="search" name="cuisineSearch" id="search_bar" class="search_bar">
+            <input type="submit">
+        </form>
+    </div>
+
+    <div id="main-content">
+        <div class="container">
+
+            <div class="row hidden-xs hidden-sm fixed-callout-row padding-top-xl">
+                <div class="col-xs-4 col-xs-offset-8">
+                    <div class="row cart margin-left-lg">
+                        <div class="col-xs-12 cart-message-replacement">
+                            <div class="row hidden-xs hidden-sm">
+                                <form id="sort_meu">
+                                    <div class="form-group">
+                                        <label for="sel1">Sort By:</label>
+                                        <select class="form-control" id="sel1">
+                                            <option value="dist-sort">Distance</option>
+                                            <option value="star-sort">Star Rating</option>
+                                            <option value="price-sort">Price Range</option>
+                                        </select>
+
+                                        <select class="form-control" id="sel2">
+                                            <option value="-1"></option>
+                                            <option value="0">Ascending</option>
+                                            <option value="1">Descending</option>
+                                        </select>
+                                        <br><br>
+                                        <label for="sel1">Filter By:</label>
+                                        <br>
+                                        <label for="sel1">Star Rating:</label>
+                                        <select class="form-control" id="sel3">
+                                            <option value="all">All</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <label for="sel1">Price Range ($):</label>
+                                        <select class="form-control" id="sel4">
+                                            <option value="all">All</option>
+                                            <option value="1">$</option>
+                                            <option value="2">$$</option>
+                                            <option value="3">$$$</option>
+                                            <option value="4">$$$$</option>
+                                            <option value="5">$$$$</option>
+                                        </select>
+                                        <br><br><br>
+                                        <button type="button" class="btn btn-danger" id="form_submit_btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row overflow-x-hide">
+                <div class="col-xs-12 col-md-8">
+                    <div class="row hidden-xs hidden-sm padding-top-xl">
+                        <div class="col-xs-12 col-md-7">
+                            <h1 class="restaurant-count" id="list-info"></h1>
+                        </div>
+                    </div>
+
+                    <div id="restaurant-list-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/papaparse.js"></script>
+    <script src="js/behaviour.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var form = document.getElementById("form_submit_btn").addEventListener("click", function () {
+                updateList();
+            });
+        });
+    </script>
+
+    </body>
+</html>
