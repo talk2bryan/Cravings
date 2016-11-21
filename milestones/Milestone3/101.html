@@ -283,13 +283,13 @@
 					$('<a>',{
 						text: "Home",
 						title: 'Home',
-						href: 'http://' + restList[id].website,
+						href: "./cravings_first_page.html",
 					}).appendTo('#breadcrumb');
 					$("#breadcrumb").append(" > ");
 					$('<a>',{
 						text: restList[id].tag,
 						title: 'Cuisine',
-						href: 'http://' + restList[id].website,
+						href: "./" + restList[id].tag + ".html",
 					}).appendTo('#breadcrumb');
 					$("#breadcrumb").append(" > " + restList[id].name);
 					
