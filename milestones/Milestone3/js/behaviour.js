@@ -241,6 +241,8 @@ function updateList() {
 function search_results(){
     var searchstring = $('#search_bar').val();
 
+    searchstring = searchstring.toLowerCase();
+
     searchstring= searchstring.charAt(0).toUpperCase() + searchstring.slice(1);
     var results = "./"+ searchstring+".html";
     window.open(results,"_self");
