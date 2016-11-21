@@ -1,0 +1,179 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: "Arial",
+	sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #f1f1f1;
+}
+
+a:link {
+	text-decoration:none;
+}
+
+ul.tab {
+	list-style-type: none;
+	margin-left:20%;
+	margin-right:20%;
+	margin-bottom: 0px;
+	padding: 0;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {
+	float: left;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+	display: inline-block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+	background-color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border-style: none;
+}
+
+#header {
+	background-color:FireBrick;
+}
+
+#logo {
+	padding: 5px;
+	height:100px;
+}
+
+#breadcrumb {
+	margin-left: 5%;
+	margin-bottom:0px;
+	margin-top:10px;
+}
+
+#name {
+	margin-top:10px;
+}
+
+#info {
+	background-color: #f1f1f1;
+	padding-bottom: 10px;
+}
+
+#rest-pic {
+	height: 200px;
+	width: 250px;
+	float: left;
+	border-style: none;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	padding-right: 15px;
+	margin-left: 10%;
+}
+
+#rating { 
+	height: 20px;
+}
+
+#lower-third {
+	position: relative;
+	z-index: 1;
+	overflow: auto;
+}
+
+#Menu {
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-bottom: 25%;
+}
+
+.sub-menu {
+	margin-top: 40px;
+}
+
+.sub-heading {
+	margin-bottom: 0px;
+}
+.sub-desc {
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+.menu-item-heading {
+	margin-bottom: 5px;
+}
+
+.menu-item-desc {
+	margin-top: 0px;
+	margin-left: 2%;
+}
+
+#Reviews {
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-bottom: 50px;
+}
+
+#review-list {
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+
+h4.review-name {
+	margin-bottom:0px;
+}
+
+p.review {
+	margin: 0px;
+}
+
+#personal-review {
+	height: 15px;
+}
+
+#Map {
+	border-style: none;
+	padding: 5px;
+}
+
+#map-picture {
+	float: right;
+	height: 100%;
+	width: 75%;
+    position: relative; 
+    margin-top: 5px; 
+	margin-right: 5px;
+    z-index: 0;
+}
+
+#directions {
+	margin-left: 2%;
+}
+
+#lower-third {
+	height: 100%;
+	background-color: white;
+}
