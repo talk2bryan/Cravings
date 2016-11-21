@@ -22,25 +22,28 @@
   }
   #picture{
     position:centre;
+    height: 100%;
+    width: 100%;
   }
   .in
   {
     text-align: centre;
   }
+
   input
   {
     width:900px;
     border:2px solid #ccc;
     border-radius:4px;
     font-size:30px;
-    background color:white;
-    background-image:url('homepage_images/search-icon-light-grey-md.png');
+    background-color:white;
+    background-image:url('../resources/images/search-icon-light-grey-md.png');
     background-position:10px 10px;
     background-size:20px;
     background-repeat:no-repeat;
     padding:12px 20px 12px 40px;
-   
   }
+
 .button
 {
     background-color: blue;
@@ -57,9 +60,27 @@
 
 .textFormatting
 {
+  position: relative;
   text-align:right right;
-  color:red;
+  color:white;
   font-size:125%;
+}
+
+h {
+  position: absolute; 
+  top: 200px; 
+  left: 0; 
+  width: 100%; 
+}
+
+h span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+   text-align: left;
 }
 .carouselbox 
       {
@@ -127,3 +148,10 @@
       pointer-events: auto;
       opacity: 1;
           }
+
+#myCarousel {
+  min-height: 800px;
+}
+.carousel-inner {
+  height: 800px;
+}
