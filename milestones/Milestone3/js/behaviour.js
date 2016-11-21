@@ -202,7 +202,7 @@ function filter_div_desc(dd){
 function less(sort_param,by_val){
 
     $('.restaurant-list').each(function(){
-        if(parseInt($(this).attr(sort_param)) != by_val){
+        if(parseInt($(this).attr(sort_param)) < by_val){
             $(this).hide();
         }
     });
@@ -234,9 +234,6 @@ function updateList() {
         else
             filter_div_desc(sort_criteria);
     }
-
-    //reload page with params
-    window.location.reload();
 }
 function search_results(){
     var searchstring = $('#search_bar').val();
