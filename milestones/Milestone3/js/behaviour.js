@@ -35,6 +35,9 @@ $(document).ready(function() {
 
                     var innerDiv = document.createElement('div');//one restaurant row
                     innerDiv.className = 'restaurant-list';
+                    var dollars_int;
+                    var dist_float;
+                    var cust_rating;
                     // innerDiv.id = 'block-2';
 
 
@@ -110,8 +113,8 @@ $(document).ready(function() {
                     starsClass.className = 'col-xs-12 stars';
                     var starImg = document.createElement('img');
                     starImg.className = 'logo-img';
-                    var num_i = row.rating;
-                    starImg.setAttribute('src',source+'/resources/images/'+num_i+'.png');
+                    cust_rating = row.rating;
+                    starImg.setAttribute('src',source+'/resources/images/'+cust_rating+'.png');
                     starsClass.appendChild(starImg);
 
 
@@ -142,12 +145,14 @@ $(document).ready(function() {
                     actualContent.className='col-xs-12 eta-info text-center';
                     var divMiles = document.createElement('div');
                     divMiles.className='info-title';
-                    divMiles.textContent = row.distance+" km";
+                    dist_float = row.distance;
+                    divMiles.textContent = dist_float+" km";
                     var divDollars = document.createElement('div');
                     divDollars.className='delivery-eta';
 
                     var dollar_symbols="";
-                    for(var dd=0;dd<row.ratingint;dd++){ dollar_symbols=dollar_symbols+"$";}
+                    dollars_int=row.ratingint;
+                    for(var dd=0;dd<dollars_int;dd++){ dollar_symbols=dollar_symbols+"$";}
                     divDollars.textContent =dollar_symbols;
 
                     actualContent.appendChild(divMiles);
@@ -161,10 +166,10 @@ $(document).ready(function() {
                     parentRow.appendChild(rightPanel);
 
 
-
-
-
-
+                    //append sort params
+                    innerDiv.setAttribute('dist-sort',dist_float);
+                    innerDiv.setAttribute('price-sort',dollars_int);
+                    innerDiv.setAttribute('star-sort',cust_rating);
 
                     //encapsulate everything as a row
                     innerDiv.appendChild(aDiv);
@@ -172,9 +177,32 @@ $(document).ready(function() {
 
                     // iDiv.appendChild(innerDiv); //add it to growing list of restaurants
                     document.getElementById('restaurant-list-container').appendChild(innerDiv); //add it to growing list of restaurants
-
                 }
+                sort_div('price-sort');
+               // document.getElementById('restaurant-list-container').sort()
                 // document.getElementById('restaurant-list-container').appendChild(iDiv); //add it to container
             }
     });
 });
+
+
+
+function sort_div(dd){
+    var mylist = $('#restaurant-list-container');
+
+    var listitems = mylist.children('div').get();
+
+    listitems.sort(function(a, b) {
+        var contentA = parseInt($(a).attr(dd));
+        var contentB = parseInt($(b).attr(dd));
+
+        return  (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+    });
+
+    $.each(listitems, function(index, item) {
+        mylist.append(item);
+    });
+    document.getElementById('restaurant-list-container').appendChild(mylist);
+}
+
+//
