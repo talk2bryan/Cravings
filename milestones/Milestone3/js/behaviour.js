@@ -86,36 +86,48 @@ $(document).ready(function() {
                     var ratingsRowDiv = document.createElement('div');
                     ratingsRowDiv.className = 'row';
 
+                    // var starsClass = document.createElement('div');
+                    // starsClass.className = 'col-xs-12 stars';
+                    //
+                    // var num_i = row.rating;
+                    //
+                    // console.log(num_i);
+                    //
+                    // for (var j = 0; j<num_i; j++) {
+                    //     //old method
+                    //     // var oneStarDiv = document.createElement('i');
+                    //     // oneStarDiv.className = 'ion-icon ion-android-star filled';
+                    //
+                    //     //new method
+                    //     var oneStarDiv = document.createElement('span');
+                    //     oneStarDiv.className='glyphicon glyphicon-star';
+                    //     oneStarDiv.setAttribute('aria-hidden',true);
+                    //     starsClass.appendChild(oneStarDiv);
+                    // }
+
                     var starsClass = document.createElement('div');
                     starsClass.className = 'col-xs-12 stars';
-
+                    var starImg = document.createElement('img');
+                    starImg.className = 'logo-img';
                     var num_i = row.rating;
+                    starImg.setAttribute('src',source+'/resources/images/'+num_i+'.png');
+                    starsClass.appendChild(starImg);
 
-                    console.log(num_i);
-
-                    for (var j = 0; j<num_i; j++) {
-                        //old method
-                        // var oneStarDiv = document.createElement('i');
-                        // oneStarDiv.className = 'ion-icon ion-android-star filled';
-
-                        //new method
-                        var oneStarDiv = document.createElement('span');
-                        oneStarDiv.className='glyphicon glyphicon-star';
-                        oneStarDiv.setAttribute('aria-hidden',true);
-                        starsClass.appendChild(oneStarDiv);
-                    }
 
                     ratingsRowDiv.appendChild(starsClass);
-                    // ratingsRowDiv.textContent = '::after';
 
+
+
+                    //$("#rating").attr("src", "./resources/images/" + restList[id].rating + ".png");
                     //appned rating two lines after this...
                     restInfoBucket.appendChild(restName);
                     restInfoBucket.appendChild(restLoc);
                     restInfoBucket.appendChild(ratingsRowDiv);
 
+                    // restInfoBucket.appendChild(ratingsRowDiv);
+
                     rowNoGuttersDiv.appendChild(restInfoBucket);
 
-                    // rowNoGuttersDiv.append('::after');
                     restInfoDiv.appendChild(rowNoGuttersDiv);
 
                     parentRow.appendChild(restLogo);
