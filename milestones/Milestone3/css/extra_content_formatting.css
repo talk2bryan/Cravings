@@ -23,8 +23,8 @@ position: relative;
 }
 
 .margin-logo-header-height{
-    margin: 0;
-    /*margin-top: 80px;*/
+    /*margin: 0;*/
+    margin-top: 80px;
 }
 
 .logo-header{
@@ -40,9 +40,36 @@ position: relative;
     z-index: 1;
 }
 
+.positionedSearch {
+    width: 400px;
+    height: 45px;
+    position: absolute;
+    z-index: 2;
+    left: 0%;
+    top: 330px;
+}
+.restaurant-search input {
+    padding-left: 26px;
+    padding-right: 68px;
+    color: #999;
+    border: 0;
+}
+
 .full-height, .restaurant-list .fill-div, .restaurant-list .pickup-space, .restaurant-list .restaurant-details-right-panel{
     height: 100%;
 }
+.margin-bottom-none, #top-message-container .alert, #top-message-container .alert-gray {
+    margin-bottom: 0px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-group-overlay input{
+    width: 100%;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -114,7 +141,10 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, del, img, s, stron
 }
 
 
-
+.input-group-overlay {
+    position: relative;
+    overflow: hidden;
+}
 
 .stars .filled {
     color: #EE9F00;
@@ -167,6 +197,16 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, del, img, s, stron
     margin-top: -12px;
     padding-bottom: 10px;
     background-color: #F2F2F2;
+}
+
+.restaurant-search {
+    position: fixed;
+    z-index: 997;
+    background-color: #FFF;
+    box-shadow: 0 3px 20px -10px rgba(0,0,0,0.5);
+}
+.border-bottom-light {
+    border-bottom: solid 1px #DDD;
 }
 
 .margin-left-lg {
@@ -276,6 +316,13 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, del, img, s, stron
     padding-left: 15px;
     padding-right: 15px;
 }
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @media (min-width: 768px){
     #restaurant-list-container {
         min-height: 612px;
@@ -338,6 +385,15 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, del, img, s, stron
         width: 1170px;
     }
 }
+
+@media (min-width: 992px){
+    .restaurant-search .container-fluid {
+        margin-left: 22px;
+    }
+}
+
+
+
 img {
     vertical-align: middle;
 }
